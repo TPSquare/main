@@ -8,7 +8,6 @@ audio.bg.loop = true;
 window.onclick = () => audio.bg.play();
 
 const mainElement = document.body.querySelector('main');
-
 TPSM.setAspectRatio(
     16,
     9,
@@ -29,23 +28,35 @@ window.onkeydown = start;
 
 const data = [
     '[T] Khi thực hiện tư thế vừa trồng cây chuối vừa ăn, thức ăn có đi xuống dạ dày được không?',
-    '[T] Ô tô đang di chuyển mà đột ngột rẽ trái thì hành khách bị nghiêng sang bên phải, đúng hay sai?',
-    '[F] Con cá vàng thực sự có trí nhớ chỉ trong vài giây, đúng hay sai?', // Nhiều tuần nhiều tháng
-    '[T] Khi một diễn viên nhí đóng phim kinh dị, diễn viên nhí đó sẽ không được xem bộ phim đó, đúng hay sai?',
-    '[F] Bạch tuộc sẽ chết ngay sau khi đẻ trứng, đúng hay sai?', // Ấp xong mới chết
-    '[F] Hai bài hát "Mẹ yêu không nào" và "Con cò bé bé" là 2 bài khác nhau, đúng hay sai?',
-    '[F] Con gì có 8 cẳng 2 càng đều gọi là cua, đúng hay sai?',
+    '[T] Ô tô đang di chuyển mà đột ngột rẽ trái thì hành khách bị nghiêng sang bên phải?',
+    '[F] Con cá vàng thực sự có trí nhớ chỉ trong vài giây?', // Nhiều tuần nhiều tháng
+    '[T] Khi một diễn viên nhí đóng phim kinh dị, diễn viên nhí đó sẽ không được xem bộ phim đó?',
+    '[F] Bạch tuộc sẽ chết ngay sau khi đẻ trứng?', // Ấp xong mới chết
+    '[F] Hai bài hát "Mẹ yêu không nào" và "Con cò bé bé" là 2 bài khác nhau?',
+    '[F] Con gì có 8 cẳng 2 càng đều gọi là cua?',
     '[T] Con người có thể vừa thở vừa nuốt cùng lúc không?', // Em bé vừa thở vừa nuốt khi bú
-    '[F] Trong không khí chúng ta hít thở hàng ngày, O₂ và CO₂ là các chất có nhiều nhất, đúng hay sai?',
+    '[F] Trong không khí chúng ta hít thở hàng ngày, O₂ và CO₂ là các chất có nhiều nhất?',
     '[F] Loài dơi có bị mù không?', // Mắt mờ
     '[T] Lạt đà có thể ăn xương rồng đầy gai không?', // Cấu tạo đặc biệt làm chúng miễn nhiễm
-    '[F] Trái đất có hình tròn, đúng hay sai?',
-    '[F] Vượn là tổ tiên của con người, đúng hay sai?', // Theo nghiên cứu mới nhất, con người và vượn có chung tổ tiên
-    '[T] Cá voi xanh là con vật lớn nhất hành tinh, đúng hay sai?', // Nặng hàng trăm tấn, có thể to ngang một sân bóng đá,
-    '[F] Bắc cực là nơi lạnh lẽo nhất trên Trái đất, đúng hay sai?', // Nam cực
-
+    '[F] Trái đất có hình tròn?',
+    '[F] Vượn là tổ tiên của con người?', // Theo nghiên cứu mới nhất, con người và vượn có chung tổ tiên
+    '[T] Cá voi xanh là con vật lớn nhất hành tinh?', // Nặng hàng trăm tấn, có thể to ngang một sân bóng đá,
+    '[F] Bắc cực là nơi lạnh lẽo nhất trên Trái đất?', // Nam cực
+    '[F] Tơ nhện đã từng được sử dụng để làm dây đàn guitar?', // Đàn violon
+    '[F] Trong không gian, ta nhìn thấy Mặt Trời màu vàng?', // Trắng
+    '[T] Âm thanh truyền qua thép nhanh hơn truyền qua không khí?', // Vì liên kết trong các phân tử rắn chặt chẽ hơn, hiệu quả truyền âm tốt hơn
+    '[T] Một trọng tài tại giải FIFA World Cup quãng đường chạy lên đến vài mươi km mỗi trận đấu?',
+    '[F] Đà điểu là loài chim duy nhất không thể bay?',
+    '[F] Monaco là quốc gia nhỏ nhất trên thế giới?', // Vatican
+    '[F] Cá có thể chớp mắt không?', // Nó không có mí mắt, tuy nhiên một số loài cá có các lớp màng có thể đóng mở để bảo vệ mắt
+    '[T] Trong phân tử NH₃, Nitrogen thể hiện tính oxi hóa thấp nhất của nó trong hợp chất?',
+    '[F] Trong phản ứng thuận nghịch, khi ở trạng thái cân bằng, các chất không phản ứng với nhau?',
+    '[T] Ở người có 23 cặp nhiễm sắc thể?',
+    '[T] Bảng chữ cái tiếng Việt có 29 chữ cái?',
+    '[T] Tận thế sẽ xuất hiện khi lực ma sát biến mất?'
 ].map((e) => [e[1], e.substring(4)]);
 let dataCurrentIndex = 0;
+console.log(data.length);
 
 const questionElement = document.body.querySelector('#question');
 const answersElement = document.body.querySelector('#answers');
@@ -90,7 +101,7 @@ for (const key of [1, 2, 3, 4]) {
 statisticsElement.update();
 
 const requestElement = TPSM.doc.querySelector('#request', {
-    data: ['Chân', 'Tay'],
+    data: ['Chân', 'Tay', 'Đầu', 'Mũi', 'Ngón tay', 'Đầu gối', 'Lưỡi', 'Khuỷu tay', 'Tóc', 'Tai'],
     reset() {
         this.innerText = this.data[Math.floor(Math.random() * this.data.length)];
     }
@@ -98,7 +109,7 @@ const requestElement = TPSM.doc.querySelector('#request', {
 
 const showQuestion = () => {
     const [answer, question] = data[dataCurrentIndex] || ['T', 'null'];
-    questionElement.innerText = question;
+    questionElement.innerText = `Câu ${dataCurrentIndex + 1}:\n${question}`;
     tickElement.className = '';
     crossElement.className = '';
     delayElement.reset();
@@ -109,15 +120,15 @@ const showQuestion = () => {
 
 const countdown = async () => {
     audio.bg.volume = 0.8;
-    setTimeout(() => audio.bg.volume = 0.6, 200);
-    setTimeout(() => audio.bg.volume = 0.4, 400);
-    setTimeout(() => audio.bg.volume = 0.2, 600);
-    setTimeout(() => audio.bg.volume = 0, 800);
-    setTimeout(() => audio.bg.volume = 0.2, 6200);
-    setTimeout(() => audio.bg.volume = 0.4, 6400);
-    setTimeout(() => audio.bg.volume = 0.6, 6600);
-    setTimeout(() => audio.bg.volume = 0.8, 6800);
-    setTimeout(() => audio.bg.volume = 1, 7000);
+    setTimeout(() => (audio.bg.volume = 0.6), 200);
+    setTimeout(() => (audio.bg.volume = 0.4), 400);
+    setTimeout(() => (audio.bg.volume = 0.2), 600);
+    setTimeout(() => (audio.bg.volume = 0), 800);
+    setTimeout(() => (audio.bg.volume = 0.2), 6200);
+    setTimeout(() => (audio.bg.volume = 0.4), 6400);
+    setTimeout(() => (audio.bg.volume = 0.6), 6600);
+    setTimeout(() => (audio.bg.volume = 0.8), 6800);
+    setTimeout(() => (audio.bg.volume = 1), 7000);
     const [answer, question] = data[dataCurrentIndex++] || ['T', 'null'];
     if (answer == 'T') {
         tickElement.className = 'true';
@@ -155,6 +166,4 @@ const actions = ({key}) => {
     --statisticsElement.groups[key].heartNum;
     statisticsElement.update(key);
 };
-
-//
-start();
+    
