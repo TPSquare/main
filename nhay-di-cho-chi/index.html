@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Tải video dự thi "Nhảy đi chờ chi"</title>
+    <link rel="stylesheet" href="./loader.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            display: flex;
+        }
+
+        main {
+            position: relative;
+            margin: auto;
+            width: 90vw;
+            height: 90vw;
+            background-color: slategrey;
+            border-radius: 5vw;
+        }
+
+        .wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vw;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-size: 7.7vw;
+            font-weight: bold;
+            color: white;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .button {
+            background-color: yellowgreen;
+            border-radius: 2vw;
+            padding: 1vw 0;
+            width: 30vw;
+            margin-left: 25vw;
+            margin-top: 5vw;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="wrapper">
+            <div class="text">Số lượng người tham gia đã đầy! Vui lòng nạp thêm 200k để có thể tham gia thêm.</div>
+            <div class="button">Nạp</div>
+        </div>
+    </main>
+    <script>
+        setTimeout(() => {
+            document.body.querySelector('.lds-ring').style.opacity = 0;
+            document.body.querySelector('.wrapper').style.opacity = 1;
+        }, 4000);
+    </script>
+</body>
+
+</html>
