@@ -1,5 +1,5 @@
 await import("https://tpsquare.github.io/modules/js/tpsm/main.js");
-await TPSM.import('doc');
+await TPSM.import("doc");
 
 new (class Run {
   constructor() {
@@ -10,6 +10,10 @@ new (class Run {
   }
   createData() {
     this.data = [
+      ["⊄", "not a subset"],
+      ["⊂", "proper subset"],
+      ["∉", "not an element of does not belong to"],
+      ["∈", "element of belongs to"],
       ["♥", "solid heart"],
       ["♡", "hollow heart"],
       ["⁰", "0 superscript zero"],
@@ -95,9 +99,7 @@ new (class Run {
               this.justCopied(true);
               setTimeout(() => this.justCopied(false), 1000);
             } catch (error) {
-              alert(
-                "Sorry, this feature is currently unavailable on your device!"
-              );
+              alert("Sorry, this feature is currently unavailable on your device!");
             }
           },
           justCopied(ok) {
