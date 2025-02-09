@@ -10,6 +10,14 @@ new (class Run {
   }
   createData() {
     this.data = [
+      ["⟹", "rightwards two headed arrow"],
+      ["⟸", "leftwards two headed arrow"],
+      ["⟶", "rightwards arrow"],
+      ["⟵", "leftwards arrow"],
+      ["↑", "up arrow"],
+      ["↓", "down arrow"],
+      ["←", "left arrow"],
+      ["→", "right arrow"],
       ["⊄", "not a subset"],
       ["⊂", "proper subset"],
       ["∉", "not an element of does not belong to"],
