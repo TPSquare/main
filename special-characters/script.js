@@ -10,6 +10,8 @@ new (class Run {
   }
   createData() {
     this.data = [
+      ["≤", "less than or equal to"],
+      ["≥", "greater than or equal to"],
       ["⟹", "rightwards two headed arrow"],
       ["⟸", "leftwards two headed arrow"],
       ["⟶", "rightwards arrow"],
@@ -79,8 +81,8 @@ new (class Run {
       ["✗", "cross mark x mark"],
       ["Ω", "omega"],
       ["•", "bullet point dot"],
-      ["⁻", "minus hyphen negative exponent"],
-      ["⁺", "plus positive exponent"],
+      ["⁻", "minus hyphen negative exponent superscript"],
+      ["⁺", "plus positive exponent superscript"],
     ].map((e) => ({ char: e[0], keys: e[1] }));
   }
   getElement() {
