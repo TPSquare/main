@@ -17,6 +17,12 @@ audio[0].loop = true;
 audio[1].loop = true;
 audio[2].loop = true;
 
+audio[0].volume = 0.3;
+audio[1].volume = 0.3;
+audio[2].volume = 0.4;
+audio[3].volume = 0.8;
+audio[4].volume = 0.8;
+
 let cur = 0;
 const play = (key) => {
   audio[cur].pause();
