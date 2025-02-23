@@ -65,4 +65,19 @@ body {
     top: -60vh;
     opacity: 0.5;
   }
+
+  .txt1 {
+    font-family: "Francois One", sans-serif;
+    font-size: 6vh;
+    top: 15vh;
+    left: 22vw;
+    color: red;
+  }
+
+  .txt2 {
+    font-family: "Protest Riot", sans-serif;
+    font-size: 7vh;
+    top: 22vh;
+    left: 4vw;
+  }
 }
