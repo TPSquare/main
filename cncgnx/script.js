@@ -1,7 +1,16 @@
+let curLoad = 0;
+const fullLoad = 6,
+  loadPercent = document.body.querySelector("#loading span");
+const loadded1 = () => loadPercent.innerText = Math.floor((++curLoad / 6 * 100)),
+  loadSuccess = () => document.body.removeChild(document.body.querySelector("#loading"));
+
 const loadAudio = (filename) => new Promise((res, rej) => {
   const audio = new Audio();
   audio.src = `./assets/${filename}.mp3`;
-  audio.onloadeddata = () => res(audio);
+  audio.onloadeddata = () => {
+    res(audio);
+    loadded1();
+  };
 });
 
 const audio = [
@@ -37,4 +46,4 @@ let order = [0, 1, 2, 5, 0, 3, 0, 4, 0];
 let idx = -1;
 window.onclick = () => play(order[++idx]);
 
-alert("Loaded! 1");
+loadSuccess();
