@@ -19,7 +19,7 @@ const audio = [
   await loadAudio("mua"),
   await loadAudio("thay_phap"),
   await loadAudio("em_dung_di"),
-  await loadAudio("phu_hoa")
+  await loadAudio("phu_hoaa")
 ]
 
 audio[0].loop = true;
