@@ -1,5 +1,3 @@
-window.onloadeddata = () => alert("Loaded! 2");
-
 const loadAudio = (filename) => new Promise((res, rej) => {
   const audio = new Audio();
   audio.src = `./assets/${filename}.mp3`;
@@ -38,3 +36,5 @@ let order = [0, 1, 2, 5, 0, 3, 0, 4, 0];
 
 let idx = -1;
 window.onclick = () => play(order[++idx]);
+
+alert("Loaded! 1");
