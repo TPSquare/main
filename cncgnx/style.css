@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  pointer-events: none;
 }
 
 html {
@@ -13,6 +14,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: #ffeb98;
+  font-family: sans-serif;
 }
 
 #loading {
@@ -28,6 +30,7 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 999;
+  transition: opacity 3s;
 }
 
 #bg {
@@ -36,48 +39,72 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  
+
   * {
     position: absolute;
   }
 
   .vn {
     height: 80vh;
-    top: 5vh;
-    right: 11vw;
+    top: 25vh;
+    right: 9vw;
   }
 
   .cloud2 {
     width: 30vw;
-    top: 10vh;
-    right: 7vw;
+    top: 30vh;
+    right: 5vw;
   }
 
   .cloud1 {
     height: 40vh;
-    right: -15vw;
-    bottom: 10vh;
+    right: -13vw;
+    bottom: -10vh;
   }
 
   .light {
     height: 200vh;
-    right: -35vw;
-    top: -60vh;
+    right: -33vw;
+    top: -40vh;
     opacity: 0.5;
   }
 
   .txt1 {
     font-family: "Francois One", sans-serif;
-    font-size: 6vh;
-    top: 15vh;
-    left: 22vw;
+    font-size: 7vh;
+    top: 45vh;
+    left: 35vw;
     color: red;
+    transform: translateX(-50%);
   }
 
   .txt2 {
     font-family: "Protest Riot", sans-serif;
-    font-size: 7vh;
-    top: 22vh;
-    left: 4vw;
+    font-size: 8.5vh;
+    text-align: center;
+    top: 53vh;
+    left: 35vw;
+    width: 70vw;
+    transform: translateX(-50%);
   }
+}
+
+#text {
+  position: absolute;
+  top: 66vh;
+  font-size: 5vh;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  left: 35vw;
+  max-width: 50vw;
+  transform: translateX(-50%);
+}
+
+#cmd {
+  position: absolute;
+  font-size: 3vh;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  left: 1vh;
+  bottom: 1vh;
 }

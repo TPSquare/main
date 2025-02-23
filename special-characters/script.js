@@ -10,6 +10,7 @@ new (class Run {
   }
   createData() {
     this.data = [
+      ["⊥", ""],
       ["≤", "less than or equal to"],
       ["≥", "greater than or equal to"],
       ["⟹", "rightwards two headed arrow"],
