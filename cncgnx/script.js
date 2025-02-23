@@ -31,7 +31,7 @@ audio[1].volume = 0.3;
 audio[2].volume = 0.2;
 audio[3].volume = 0.8;
 audio[4].volume = 0.8;
-audio[5].volume = 0.3;
+audio[5].volume = 0.4;
 
 let cur = 0;
 const play = (key) => {
