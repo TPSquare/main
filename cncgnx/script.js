@@ -1,5 +1,5 @@
 let curLoad = 0;
-const fullLoad = 9,
+const fullLoad = 7,
   loadPercent = document.body.querySelector("#loading span");
 const loadded1 = () => loadPercent.innerText = Math.floor((++curLoad / 6 * 100)),
   loadSuccess = () => document.body.removeChild(document.body.querySelector("#loading"));
@@ -8,6 +8,7 @@ const loadFunc = {
   main: (filename, cls, ext) => new Promise((res, rej) => {
     const r = new cls();
     r.src = `./assets/${filename}.${ext}`;
+    r.id = filename;
     r.onloadeddata = () => {
       res(r);
       loadded1();
@@ -15,13 +16,7 @@ const loadFunc = {
   }),
   async audio(filename) {
     return await this.main(filename, Audio, "mp3");
-  },
-  async image(filename) {
-    return await this.main(filename, Image, "png");
-  },
-  async GIF(filename) {
-    return await this.main(filename, Image, "gif");
-  },
+  }
 }
 
 const audio = [
@@ -57,10 +52,7 @@ let order = [0, 1, 2, 5, 0, 3, 0, 4, 0];
 let idx = -1;
 window.onclick = () => play(order[++idx]);
 
-// const image = {
-//   vn: await loadFunc.image("vn"),
-//   cloud1: await loadFunc.GIF("cloud1"),
-//   cloud2: await loadFunc.image("cloud2"),
-// }
-
-loadSuccess();
+setTimeout(() => {
+  loadded1();
+  loadSuccess();
+}, 1000);
