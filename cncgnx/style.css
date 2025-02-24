@@ -47,24 +47,24 @@ body {
   .vn {
     height: 80vh;
     top: 25vh;
-    right: 9vw;
+    right: 5vw;
   }
 
   .cloud2 {
     width: 30vw;
     top: 30vh;
-    right: 5vw;
+    right: 1vw;
   }
 
   .cloud1 {
     height: 40vh;
-    right: -13vw;
+    right: -17vw;
     bottom: -10vh;
   }
 
   .light {
     height: 200vh;
-    right: -33vw;
+    right: -37vw;
     top: -40vh;
     opacity: 0.5;
   }
@@ -73,7 +73,7 @@ body {
     font-family: "Francois One", sans-serif;
     font-size: 7vh;
     top: 45vh;
-    left: 35vw;
+    left: 37vw;
     color: red;
     transform: translateX(-50%);
   }
@@ -83,7 +83,7 @@ body {
     font-size: 8.5vh;
     text-align: center;
     top: 53vh;
-    left: 35vw;
+    left: 37vw;
     width: 70vw;
     transform: translateX(-50%);
   }
@@ -95,7 +95,7 @@ body {
   font-size: 5vh;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-  left: 35vw;
+  left: 37vw;
   max-width: 50vw;
   transform: translateX(-50%);
 }
