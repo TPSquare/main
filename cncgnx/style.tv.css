@@ -18,7 +18,7 @@ body {
   position: absolute;
   background-color: black;
   color: white;
-  font-size: 5vh;
+  font-size: 6.5vh;
   top: 0;
   left: 0;
   width: 130vw;
@@ -34,84 +34,85 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 130vw;
+  height: 130vh;
 
   * {
     position: absolute;
   }
 
   .vn {
-    height: 80vh;
-    top: 25vh;
-    right: 5vw;
+    height: 104vh;
+    top: 32.5vh;
+    right: 6.5vw;
   }
 
   .cloud2 {
-    width: 30vw;
-    top: 30vh;
-    right: 1vw;
+    width: 39vw;
+    top: 39vh;
+    right: 1.3vw;
   }
 
   .cloud1 {
-    height: 40vh;
-    right: -17vw;
-    bottom: -10vh;
+    height: 52vh;
+    right: -22.1vw;
+    bottom: -13vh;
   }
 
   .light {
-    height: 200vh;
-    right: -37vw;
-    top: -40vh;
+    height: 260vh;
+    right: -48.1vw;
+    top: -52vh;
     opacity: 0.5;
   }
 
   .txt1 {
     font-family: "Francois One", sans-serif;
-    font-size: 7vh;
-    top: 45vh;
-    left: 37vw;
+    font-size: 9.1vh;
+    top: 58.5vh;
+    left: 48.1vw;
     color: red;
     transform: translateX(-50%);
   }
 
   .txt2 {
     font-family: "Protest Riot", sans-serif;
-    font-size: 8.5vh;
+    font-size: 11.05vh;
     text-align: center;
-    top: 53vh;
-    left: 37vw;
-    width: 70vw;
+    top: 68.9vh;
+    left: 48.1vw;
+    width: 91vw;
     transform: translateX(-50%);
   }
 }
 
 #text {
   position: absolute;
-  top: 66vh;
-  font-size: 5vh;
+  top: 85.8vh;
+  font-size: 6.5vh;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-  left: 37vw;
-  max-width: 50vw;
+  left: 48.1vw;
+  max-width: 65vw;
   transform: translateX(-50%);
 }
 
 #cmd {
   position: absolute;
-  font-size: 3vh;
+  font-size: 3.9vh;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-  left: 1vh;
-  bottom: 1vh;
+  left: 1.3vh;
+  bottom: 1.3vh;
 }
 
 #btn {
   position: absolute;
-  width: 4vw;
-  height: 4vw;
-  left: 1vh;
-  top: 1vh;
+  width: 5.2vw;
+  height: 5.2vw;
+  left: 1.3vh;
+  top: 1.3vh;
   background-color: white;
-  border-radius: 1vh;
+  border-radius: 1.3vh;
+  pointer-events: all !important;
 }

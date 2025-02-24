@@ -150,7 +150,11 @@ const order = [
   "t21",
 ];
 let idx = -1;
-window.onclick = () => {
+window.onclick = (e) => {
+  if (e.target.id == "btn") {
+    playAudio(-2);
+    return;
+  }
   const cmd = order[++idx],
     id = Number(cmd.substring(1));
   cmdElm.innerText = `${cmd}${order[idx + 1] ? `.${order[idx + 1]}` : ""}`;
