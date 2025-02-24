@@ -42,6 +42,7 @@ const audio = [
 audio[0].loop = true;
 audio[1].loop = true;
 audio[2].loop = true;
+audio[8].loop = true;
 audio[0].volume = 0.3;
 audio[1].volume = 0.3;
 audio[2].volume = 0.3;
@@ -101,8 +102,8 @@ const text = [
 ].join("$$$").replaceAll("\n", "<br>").replaceAll("    ", "&nbsp;&nbsp;&nbsp;&nbsp;").split("$$$");
 
 const order = [
-  "t29",
   "a8",
+  "t29",
   "t1",
   "t29",
   "t2",
