@@ -57,6 +57,10 @@ const playAudio = (key) => {
   audio[cur].pause();
   audio[cur].currentTime = 0;
   if (key == -1) return;
+  else if (key == -2) {
+    audio[cur].play();
+    return;
+  }
   audio[key].play();
   cur = key;
 };
