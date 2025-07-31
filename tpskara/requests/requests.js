@@ -1,4 +1,20 @@
 export default {
   doing: "",
-  noted: ["ZRrH90b5rIE"],
+  noted: [
+    "19axpmVOnrk",
+    "vqEoE3ABR-k",
+    "ZRrH90b5rIE",
+    "wsPEAKoIZf0",
+    "86htdJAHF-E: Có giọng Amee",
+    "iayh6-oRFQA",
+    "56c6GafQf5A",
+    "mdd9FENKmDk: Có hook",
+    "SsLpY072ydY",
+    "vDBHGs9aE_I",
+    "MbFnn9tT8VM",
+    "enGMdTB7kcg",
+    "6W8wVFinQdI: Có bè tiếng Anh",
+    "8kZjp0I6rm4",
+    "mYAQ331U2eY",
+  ],
 };
