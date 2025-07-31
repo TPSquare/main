@@ -11,12 +11,12 @@
   aboutElement.querySelector(".label.views .text").textContent = `${viewCount} lượt xem`;
 })();
 
-import rawRequests from "./requests.js";
 import createRequestElement from "./utilities/create-request-element.js";
 import getVideoData from "./utilities/get-video-data.js";
 import parseRequest from "./utilities/parse-request.js";
 (async () => {
   const requestsListElement = document.getElementById("requests-list");
+  const rawRequests = await fetch(`./requests.json?t=${Date.now()}`).then((res) => res.json());
 
   if (rawRequests.doing || rawRequests.noted.length)
     requestsListElement.removeChild(requestsListElement.querySelector(".empty"));
