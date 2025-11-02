@@ -1,18 +1,12 @@
-const data = await fetch(`./data.json?t=${Date.now()}`).then((res) => res.json());
-const mainElement = document.body.querySelector("main");
-const indexElement = document.body.querySelector(".index");
-let index = 0;
-document.body.querySelector("img").onclick = function () {
-  document.body.removeChild(this);
-  window.onclick = () => {
-    if (data.length === 0) {
-      mainElement.innerText = "HẾT!";
-      indexElement.innerText = "";
-      return;
-    }
-    const id = Math.floor(Math.random() * data.length);
-    const value = data.splice(id, 1)[0];
-    mainElement.innerText = value;
-    indexElement.innerText = ++index;
-  };
+const music = document.getElementById("music");
+const timeout = document.getElementById("timeout");
+const delay = (duration) => new Promise((res) => setTimeout(res, duration));
+music.volume = 0.5;
+window.onclick = async () => {
+  music.play();
+  const duration = (15 + Math.floor(Math.random() * 45)) * 1000;
+  await delay(duration);
+  music.pause();
+  music.currentTime = 0;
+  timeout.play();
 };

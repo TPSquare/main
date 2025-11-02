@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HĐTN tuần 8</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <img src="./topic.jpg" alt="topic" />
-    <div class="index"></div>
-    <main></main>
-    <script type="module" src="./script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HĐTN tuần 9</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    html {
+      overflow: hidden;
+    }
+
+    img {
+      user-select: none;
+      pointer-events: none;
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <img src="./background.png" alt="background">
+  <audio id="music" src="./music.mp3" preload="auto"></audio>
+  <audio id="timeout" src="./timeout.mp3" preload="auto"></audio>
+  <script type="module" src="./script.js"></script>
+</body>
 </html>
