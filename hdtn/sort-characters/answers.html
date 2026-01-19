@@ -35,7 +35,7 @@
   <body>
     <main></main>
     <script type="module">
-      const data = await fetch(`/data.json?t=${Date.now()}`).then((res) => res.json());
+      const data = await fetch(`./data.json?t=${Date.now()}`).then((res) => res.json());
       const main = document.body.querySelector("main");
       window.onclick = () => {
         if (!data.length) return;

@@ -1,7 +1,7 @@
 const background1Img = document.body.querySelector('img[alt="bg1"]');
 background1Img.onclick = () => (background1Img.style.opacity = 0);
 
-const data = Array.from(await fetch(`/data.json?t=${Date.now()}`).then((res) => res.json()));
+const data = Array.from(await fetch(`./data.json?t=${Date.now()}`).then((res) => res.json()));
 const indexElement = document.body.querySelector("#index");
 const mainElement = document.body.querySelector("main");
 let index = 0;
