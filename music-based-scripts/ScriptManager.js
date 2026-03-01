@@ -70,6 +70,8 @@ export default class ScriptManager {
     const video = document.createElement("video");
     video.src = `./assets/${name}.mp4`;
     video.className = name;
+    video.playsInline = true;
+    video.controls = true;
 
     const loadElement = document.createElement("div");
     loadElement.textContent = `Đang tải ${name}.mp4`;
