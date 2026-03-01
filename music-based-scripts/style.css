@@ -8,12 +8,14 @@ html {
   scrollbar-width: none;
 }
 
+body {
+  padding: 30px 5px;
+}
+
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 30px;
-  padding-inline: 5px;
   font-size: 14px;
   overflow-x: auto;
 }
@@ -51,20 +53,25 @@ main {
   margin-bottom: 10px;
 }
 
-.scenes-table,
-.scenes-table th,
-.scenes-table td {
+table,
+table th,
+table td {
   border: 1px solid black;
   border-collapse: collapse;
 }
 
-.scenes-table th,
-.scenes-table td {
+table th,
+table td {
   padding: 4px 8px;
 }
 
+.scenes-table {
+  margin-bottom: 30px;
+}
+
 .scenes-table td:first-child,
-.scenes-table td:nth-child(2) {
+.scenes-table td:nth-child(2),
+#actors-statistics td {
   text-align: center;
 }
 
@@ -75,4 +82,20 @@ main {
 
 .audio-button {
   padding: 2px 4px;
+}
+
+.red {
+  color: red;
+}
+
+#actors-statistics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#actors-statistics .title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 6px;
 }

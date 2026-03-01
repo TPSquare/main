@@ -15,6 +15,10 @@ export default class ScriptManager {
   #container = document.body.querySelector("main");
   #sampleVideosBlock = document.getElementById("sample-videos-block");
   #loadingLog = document.getElementById("loading-log");
+  #actorsStatistics = document.getElementById("actors-statistics");
+
+  #actorsStatisticsData = {};
+  #actorsStatisticsAll = 0;
 
   sampleVideos = {};
   audios = {};
@@ -59,11 +63,31 @@ export default class ScriptManager {
         if (scene.sampleVideo) return this.#createOpenSampleVideoButton(scene.sampleVideo);
         return scene.description;
       })();
-      const actors = scene.actors.join(", ");
+      const actors = scene.actors
+        .map((actor) => {
+          if (actor.includes("người")) return `<span class="red">${actor}</span>`;
+          if (actor.toLowerCase() === "tất cả") ++this.#actorsStatisticsAll;
+          else if (actor !== "")
+            this.#actorsStatisticsData[actor] = this.#actorsStatisticsData[actor] + 1 || 1;
+          return actor;
+        })
+        .join(", ");
       const cells = [order, musicButton, description, actors];
       scenesTable.appendChild(this.#createTableRow(cells));
     });
     this.#container.appendChild(scenesTable);
+  }
+
+  done() {
+    this.#addActorsStatistics();
+  }
+
+  #addActorsStatistics() {
+    const rows = Object.keys(this.#actorsStatisticsData).map(
+      (name) => `<tr><td>${name}</td><td>${this.#actorsStatisticsData[name]}</td></tr>`,
+    );
+    const table = `<table><tr><th>Tên</th><th>Số vai đã có</th></tr>${rows.join("")}</table>`;
+    this.#actorsStatistics.innerHTML += table;
   }
 
   #createSampleVideo(name) {
@@ -108,7 +132,7 @@ export default class ScriptManager {
     cellNodes.forEach((cell) => {
       const td = document.createElement("td");
       if (cell instanceof Node) td.appendChild(cell);
-      else td.textContent = cell;
+      else td.innerHTML = cell;
       tr.appendChild(td);
     });
     return tr;

@@ -2,9 +2,9 @@ import ScriptManager from "./ScriptManager.js";
 
 const manager = new ScriptManager(["audio"], ["sample"]);
 
-manager.center("Trong lớp");
-manager.center("Hành lang");
-manager.center("Dưới sân");
+// manager.center("Trong lớp");
+// manager.center("Hành lang");
+// manager.center("Dưới sân"); 
 
 manager.scenes([
   { sampleVideo: [manager.sampleVideos.sample, "0:00 - 0:12"], actors: ["3 người"] },
@@ -12,11 +12,11 @@ manager.scenes([
   { sampleVideo: [manager.sampleVideos.sample, "0:29 - 0:35.3"], actors: ["3 người"] },
   { sampleVideo: [manager.sampleVideos.sample, "0:36 - 0:37.4"], actors: ["1 người"] },
   { sampleVideo: [manager.sampleVideos.sample, "0:37.8 - 0:38.25"], actors: ["1 người"] },
-  { sampleVideo: [manager.sampleVideos.sample, "0:38.5 - 0:39.5"], actors: ["1 người"] },
-  { sampleVideo: [manager.sampleVideos.sample, "0:39.8 - 0:41.4"], actors: ["3 người"] },
+  { sampleVideo: [manager.sampleVideos.sample, "0:38.5 - 0:39.5"], actors: ["Quang Hào"] },
+  { sampleVideo: [manager.sampleVideos.sample, "0:39.8 - 0:41.4"], actors: ["Trung Nguyên", "Anh Quốc", "còn 1 người"] },
   { sampleVideo: [manager.sampleVideos.sample, "0:42 - 0:45.3"], actors: ["3 người"] },
   { sampleVideo: [manager.sampleVideos.sample, "0:45.5 - 0:47"], actors: ["Tất cả"] },
-  { sampleVideo: [manager.sampleVideos.sample, "0:47.3 - 0:50"], actors: ["2 người"] },
+  { sampleVideo: [manager.sampleVideos.sample, "0:47.3 - 0:50"], actors: ["Trung Nguyên", "còn 1 người"] },
   { sampleVideo: [manager.sampleVideos.sample, "0:50.5 - 0:53.1"], actors: ["3 người"] },
   { sampleVideo: [manager.sampleVideos.sample, "0:53.3 - 0:56.5"], actors: ["1 người"] },
   { sampleVideo: [manager.sampleVideos.sample, "0:56.8 - 0:58.3"], actors: ["5-6 người"] },
@@ -24,42 +24,42 @@ manager.scenes([
   { sampleVideo: [manager.sampleVideos.sample, "1:00.8 - 1:02.6"], actors: ["2 người"] },
   { sampleVideo: [manager.sampleVideos.sample, "1:02.8 - 1:04.5"], actors: ["6-7 người"] },
   { sampleVideo: [manager.sampleVideos.sample, "1:04.7 - 1:07.7"], actors: ["1 người", "tất cả"] },
-  { sampleVideo: [manager.sampleVideos.sample, "1:08 - 1:10.2"], actors: ["1 người"] },
+  { sampleVideo: [manager.sampleVideos.sample, "1:08 - 1:10.2"], actors: ["Quang Hào"] },
   { sampleVideo: [manager.sampleVideos.sample, "1:10.4 - 1:12"], actors: ["2 người"] },
   { sampleVideo: [manager.sampleVideos.sample, "1:12.3 - 1:13.8"], actors: ["1 người"] },
-  { sampleVideo: [manager.sampleVideos.sample, "1:14 - 1:15.8"], actors: ["5 người"] },
+  { sampleVideo: [manager.sampleVideos.sample, "1:14 - 1:15.8"], actors: ["Anh Quốc", "còn 4 người"] },
   { sampleVideo: [manager.sampleVideos.sample, "1:16 - 1:17.7"], actors: ["2 người"] },
-  { sampleVideo: [manager.sampleVideos.sample, "1:18 - 1:19.8"], actors: ["1 người"] },
-  { sampleVideo: [manager.sampleVideos.sample, "1:19.8 - 1:23.4"], actors: ["8 người"] },
-  { sampleVideo: [manager.sampleVideos.sample, "1:23.7 - 1:27.3"], actors: ["4 người"] },
-  { sampleVideo: [manager.sampleVideos.sample, "1:27.55 - 1:29.8"], actors: ["3 người"] },
-  { sampleVideo: [manager.sampleVideos.sample, "1:30.1 - 1:34.3"], actors: ["6 người"] },
+  { sampleVideo: [manager.sampleVideos.sample, "1:18 - 1:19.8"], actors: ["Quang Hào"] },
+  { sampleVideo: [manager.sampleVideos.sample, "1:19.8 - 1:23.4"], actors: ["Duy Sơn", "còn 7 người"] },
+  { sampleVideo: [manager.sampleVideos.sample, "1:23.7 - 1:27.3"], actors: ["Duy Sơn", "Anh Quốc", "còn 2 người"] },
+  { sampleVideo: [manager.sampleVideos.sample, "1:27.55 - 1:29.8"], actors: ["Duy Sơn", "còn 2 người"] },
+  { sampleVideo: [manager.sampleVideos.sample, "1:30.1 - 1:34.3"], actors: ["Duy Sơn", "còn 5 người"] },
   { audio: [manager.audios.audio, "1:42.7 - 1:46.2"], description: "1 người đứng giữa, 4 người đứng xung quanh, lần lượt chạy tới ôm người giữa theo nhạc", actors: ["5 người"] },
   { audio: [manager.audios.audio, "1:46.5 - 1:48.8"], description: "Nhảy loạn xạ như bị \"điên\"", actors: ["4-5 người"] },
   { audio: [manager.audios.audio, "1:49 - 1:50.5"], description: "Ôm không khí, xoay vòng tròn", actors: ["1 người"] },
   { audio: [manager.audios.audio, "1:50.7 - 1:52.5"], description: "Ghi dang dở bài thơ lên bảng", actors: ["1 người"] },
   { audio: [manager.audios.audio, "1:52.7 - 1:53.8"], description: "1 người lấy tay quơ lên đầu người kia (edit gắn nametag trong Minecraft)", actors: ["2 người"] },
   { audio: [manager.audios.audio, "1:54 - 1:57.6"], description: "1 người nhìn thấy người kia và chạy tới ôm, chuyển cảnh thành ôm cái cây", actors: ["2 người"] },
-  { sampleVideo: [manager.sampleVideos.sample, "1:34.38 - 1:38.5"], actors: ["3 người"] },
+  { sampleVideo: [manager.sampleVideos.sample, "1:34.38 - 1:38.5"], actors: ["Quang Hào", "Duy Sơn", "Anh Quốc"] },
   { sampleVideo: [manager.sampleVideos.sample, "1:38.67 - 1:45.5"], actors: ["2 người"] },
-  { sampleVideo: [manager.sampleVideos.sample, "1:45.9 - 1:50.1"], actors: ["2 người"] },
-  { sampleVideo: [manager.sampleVideos.sample, "1:50.35 - 1:54"], actors: ["5-6 người"] },
-  { sampleVideo: [manager.sampleVideos.sample, "1:54.3 - 1:57.5"], actors: ["2 người"] },
-  { sampleVideo: [manager.sampleVideos.sample, "1:57.8 - 2:01"], actors: ["3 người"] },
-  { sampleVideo: [manager.sampleVideos.sample, "2:01.9 - 2:03"], actors: ["6 người"] },
+  { sampleVideo: [manager.sampleVideos.sample, "1:45.9 - 1:50.1"], actors: ["Duy Sơn", "còn 1 người"] },
+  { sampleVideo: [manager.sampleVideos.sample, "1:50.35 - 1:54"], actors: ["Quang Hào", "Duy Sơn", "còn 3-4 người"] },
+  { sampleVideo: [manager.sampleVideos.sample, "1:54.3 - 1:57.5"], actors: ["Duy Sơn", "còn 1 người"] },
+  { sampleVideo: [manager.sampleVideos.sample, "1:57.8 - 2:01"], actors: ["Duy Sơn", "còn 2 người"] },
+  { sampleVideo: [manager.sampleVideos.sample, "2:01.9 - 2:03"], actors: ["Duy Sơn", "còn 5 người"] },
   { sampleVideo: [manager.sampleVideos.sample, "2:03.3 - 2:05.5"], actors: ["2 người"] },
   { sampleVideo: [manager.sampleVideos.sample, "2:05.8 - 2:06.5"], actors: ["1 người"] },
   { sampleVideo: [manager.sampleVideos.sample, "2:06.8 - 2:09.4"], actors: ["4 người"] },
   { sampleVideo: [manager.sampleVideos.sample, "2:09.55 - 2:12.5"], actors: ["Tất cả"] },
-  { sampleVideo: [manager.sampleVideos.sample, "2:12.8 - 2:14"], actors: ["2 người"] },
+  { sampleVideo: [manager.sampleVideos.sample, "2:12.8 - 2:14"], actors: ["Quang Hào", "còn 1 người"] },
   { sampleVideo: [manager.sampleVideos.sample, "2:14.4 - 2:16"], actors: ["6-7 người"] },
   { audio: [manager.audios.audio, "2:40 - 2:47"], description: "5 người xếp tay thành hình ngôi sao, 1 người ngồi nói chuyện với ngôi sao", actors: ["6 người"] },
   { audio: [manager.audios.audio, "2:47.2 - 2:51"], description: "1 người đi ngang, 4-5 đứng uốn éo", actors: ["5-6 người"] },
   { audio: [manager.audios.audio, "2:51.3 - 2:53.1"], description: "Chỉ 2 ngón trỏ vào nhau (ngại ngùng)", actors: ["1 người"] },
   { audio: [manager.audios.audio, "2:53.1 - 2:54.9"], description: "1 người đang ăn (cái gì đó), thấy người kia đi ngang qua thì nhìn rơi cả đũa", actors: ["2 người"] },
   { audio: [manager.audios.audio, "2:55.1 - 2:58.3"], description: "1 người ngồi trong lớp (gần cửa sổ), người kia thò tay vào để nắm tay, người trong lớp đập tay người bên ngoài, người bên ngoài quắn quéo", actors: ["2 người"] },
-  { audio: [manager.audios.audio, "2:58.7 - 3:02.6"], description: "Đập bàn đập ghế", actors: ["1-2 người"] },
-  { audio: [manager.audios.audio, "3:02.8 - 3:06.4"], description: "Ngồi thở dài", actors: ["3-4 người"] },
+  { audio: [manager.audios.audio, "2:58.7 - 3:02.6"], description: "Đập bàn đập ghế", actors: ["Anh Quốc", "có thể thêm 1 người"] },
+  { audio: [manager.audios.audio, "3:02.8 - 3:06.4"], description: "Ngồi thở dài", actors: ["Anh Quốc", "còn 2-3 người"] },
   { audio: [manager.audios.audio, "3:06.6 - 3:09"], description: "Ngồi cười khờ", actors: ["1 người"] },
   { audio: [manager.audios.audio, "3:09.4 - 3:13.2"], description: "1 người đang đi thì bị người kia đẩy té xuống đè lên, 3 người khác chạy vào đè lên theo nhạc", actors: ["5 người"] },
   { audio: [manager.audios.audio, "3:13.4 - 3:17"], description: "Đang ở cảnh trên, người bị đè giơ tay lên cầu cứu, thêm 2 người khác nhảy vào đè tiếp", actors: ["Thêm 2 người"] },
@@ -82,3 +82,5 @@ manager.scenes([
   { audio: [manager.audios.audio, "4:25.2 - 4:28.8"], description: "Cả đám dí theo một người để ôm (4 cảnh khác nhau)", actors: ["6-7 người"] },
   { sampleVideo: [manager.sampleVideos.sample, "2:49.9 - 3:03.3"], actors: ["Tất cả"] },
 ]);
+
+manager.done();
