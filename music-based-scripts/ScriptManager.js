@@ -14,6 +14,7 @@ window.onkeydown = ({ key }) => {
 export default class ScriptManager {
   #container = document.body.querySelector("main");
   #sampleVideosBlock = document.getElementById("sample-videos-block");
+  #loadingLog = document.getElementById("loading-log");
 
   sampleVideos = {};
   audios = {};
@@ -69,14 +70,27 @@ export default class ScriptManager {
     const video = document.createElement("video");
     video.src = `./assets/${name}.mp4`;
     video.className = name;
+
+    const loadElement = document.createElement("div");
+    loadElement.textContent = `Đang tải ${name}.mp4`;
+    this.#loadingLog.appendChild(loadElement);
+    video.onloadeddata = () => this.#loadingLog.removeChild(loadElement);
+
     video.load();
+
     this.#sampleVideosBlock.appendChild(video);
     return video;
   }
 
   #createAudio(name) {
     const audio = new Audio(`./assets/${name}.mp3`);
+
+    const loadElement = document.createElement("div");
+    loadElement.textContent = `Đang tải ${name}.mp3`;
+    this.#loadingLog.appendChild(loadElement);
+    audio.onloadeddata = () => this.#loadingLog.removeChild(loadElement);
     audio.load();
+
     return audio;
   }
 
