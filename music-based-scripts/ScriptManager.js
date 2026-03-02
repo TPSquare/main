@@ -12,13 +12,15 @@ window.onkeydown = ({ key }) => {
 };
 
 export default class ScriptManager {
-  #container = document.body.querySelector("main");
+  #sceneContainer = document.body.querySelector("main");
   #sampleVideosBlock = document.getElementById("sample-videos-block");
   #loadingLog = document.getElementById("loading-log");
   #actorsStatistics = document.getElementById("actors-statistics");
+  #actorSearchSelect = document.body.querySelector("#actor-search select");
 
   #actorsStatisticsData = {};
   #actorsStatisticsAll = 0;
+  #scenesData = [];
 
   sampleVideos = {};
   audios = {};
@@ -42,52 +44,101 @@ export default class ScriptManager {
     const centerElement = document.createElement("div");
     centerElement.className = "center";
     centerElement.textContent = text;
-    this.#container.appendChild(centerElement);
+    this.#sceneContainer.appendChild(centerElement);
   }
 
   /**
    *
    * @param {Scene[]} scenes
    */
-  scenes(scenes) {
+  scenes(metadata, scenes) {
+    const scene = document.createElement("div");
+    scene.className = `scene scene-${this.#scenesData.length}`;
+
+    this.#scenesData.push(scenes);
+
+    const title = document.createElement("div");
+    title.className = "title";
+    title.textContent = metadata.title;
+    scene.appendChild(title);
+
     const scenesTable = document.createElement("table");
-    scenesTable.className = "scenes-table";
+    scenesTable.className = "scene-table";
     scenesTable.appendChild(this.#getScenesTableHeader());
     scenes.forEach((scene, index) => {
       const order = index + 1;
+
       const musicButton = (() => {
         if (scene.audio) return this.#createAudioButton(scene.audio);
         return null;
       })();
+
       const description = (() => {
         if (scene.sampleVideo) return this.#createOpenSampleVideoButton(scene.sampleVideo);
         return scene.description;
       })();
+
       const actors = scene.actors
         .map((actor) => {
           if (actor.includes("người")) return `<span class="red">${actor}</span>`;
           if (actor.toLowerCase() === "tất cả") ++this.#actorsStatisticsAll;
-          else if (actor !== "")
-            this.#actorsStatisticsData[actor] = this.#actorsStatisticsData[actor] + 1 || 1;
+          else if (actor !== "") this.#actorsStatisticsData[actor] = this.#actorsStatisticsData[actor] + 1 || 1;
           return actor;
         })
         .join(", ");
-      const cells = [order, musicButton, description, actors];
+
+      const preparation = scene.preparation || "";
+
+      const cells = [order, musicButton, description, actors, preparation];
       scenesTable.appendChild(this.#createTableRow(cells));
     });
-    this.#container.appendChild(scenesTable);
+    scene.appendChild(scenesTable);
+
+    this.#sceneContainer.appendChild(scene);
   }
 
   done() {
+    this.#sortActorsStatisticsData();
     this.#addActorsStatistics();
+    this.#createActorSearchSelect();
+  }
+
+  #sortActorsStatisticsData() {
+    const data = structuredClone(this.#actorsStatisticsData);
+    const list = Object.keys(data).sort((actor1, actor2) => data[actor2] - data[actor1]);
+    this.#actorsStatisticsData = {};
+    for (const name of list) this.#actorsStatisticsData[name] = data[name];
   }
 
   #addActorsStatistics() {
-    const rows = Object.keys(this.#actorsStatisticsData).map(
-      (name) => `<tr><td>${name}</td><td>${this.#actorsStatisticsData[name]}</td></tr>`,
-    );
-    const table = `<table><tr><th>Tên</th><th>Số vai đã có</th></tr>${rows.join("")}</table>`;
+    const maper = (name, i) => `<tr><td>${i + 1}</td><td>${name}</td><td>${this.#actorsStatisticsData[name]}</td></tr>`;
+    const rows = Object.keys(this.#actorsStatisticsData).map(maper);
+    const table = `<table><tr><th>STT</th><th>Tên</th><th>Số vai đã có</th></tr>${rows.join("")}</table>`;
     this.#actorsStatistics.innerHTML += table;
+  }
+
+  #createActorSearchSelect() {
+    const actors = ["Tất cả"].concat(Object.keys(this.#actorsStatisticsData));
+    const options = actors.map((actor) => `<option value="${actor}">${actor}</option>`).join("");
+    this.#actorSearchSelect.innerHTML = options;
+
+    this.#actorSearchSelect.onchange = () => {
+      this.#sceneContainer.querySelectorAll(".hidden").forEach((e) => e.classList.remove("hidden"));
+      const value = this.#actorSearchSelect.value;
+      if (value === "Tất cả") return;
+
+      this.#scenesData.forEach((scenes, index) => {
+        const scenesActors = scenes.map(({ actors }) => actors);
+        scenesActors.forEach((actors, i) => {
+          const query = `.scene-${index} .scene-table tr:nth-child(${i + 2})`;
+          if (!actors.includes(value)) this.#sceneContainer.querySelector(query).classList.add("hidden");
+        });
+      });
+
+      this.#sceneContainer.querySelectorAll(".scene").forEach((scene) => {
+        if (scene.querySelectorAll(".scene-table tr:not(.hidden)").length <= 1) scene.classList.add("hidden");
+      });
+    };
   }
 
   #createSampleVideo(name) {
@@ -121,7 +172,7 @@ export default class ScriptManager {
   }
 
   #getScenesTableHeader() {
-    const cells = ["Cảnh", "Đoạn nhạc", "Mô tả", "Người diễn"];
+    const cells = ["Cảnh", "Đoạn nhạc", "Mô tả", "Người diễn", "Chuẩn bị / Đạo cụ"];
     const tr = document.createElement("tr");
     tr.innerHTML = cells.map((c) => `<th>${c}</th>`).join("");
     return tr;
