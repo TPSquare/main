@@ -11,7 +11,7 @@ const inClassScenes = [
   { sampleVideo: [manager.sampleVideos.sample, "0:53.3 - 0:56.5"], actors: ["Nguyễn Nhật"], preparation: "TV chiếu hình các bạn nữ" },
   { sampleVideo: [manager.sampleVideos.sample, "0:58.6 - 1:00.4"], actors: ["Thành Vũ"] },
   { sampleVideo: [manager.sampleVideos.sample, "1:00.8 - 1:02.6"], actors: ["Duy Sơn", "Quang Hào"], preparation: "TV chiếu hình ngôi sao" },
-  { sampleVideo: [manager.sampleVideos.sample, "1:04.7 - 1:07.7"], actors: ["Thành Vũ", "tất cả"], preparation: "Bảng phụ có nội dung, cây thước" },
+  { sampleVideo: [manager.sampleVideos.sample, "1:04.7 - 1:07.7"], actors: ["Thành Vũ", "tất cả"], preparation: "Bảng phụ có nội dung" },
   { sampleVideo: [manager.sampleVideos.sample, "1:10.4 - 1:12"], actors: ["Đại Doãn", "Duy Sơn"], preparation: "Một cành hoa (hoặc gì đấy cho giống con gái)" },
   { sampleVideo: [manager.sampleVideos.sample, "1:12.3 - 1:13.8"], actors: ["Duy Khang"], preparation: 'Bảng ghi đầy chữ "ngu văn"' },
   { sampleVideo: [manager.sampleVideos.sample, "1:18 - 1:19.8"], actors: ["Quang Hào"] },
@@ -33,7 +33,7 @@ const inClassScenes = [
 manager.scenes({ title: "Trong lớp" }, inClassScenes);
 
 const lobbyScenes = [
-  { sampleVideo: [manager.sampleVideos.sample, "0:29 - 0:35.3"], actors: ["Duy Sơn", "Quang Hào", "Xuân Vũ"], preparation: "Một tấm vải" },
+  { sampleVideo: [manager.sampleVideos.sample, "0:29 - 0:35.3"], actors: ["Duy Sơn", "Quang Hào", "Xuân Vũ"], preparation: "Một tấm vải hoặc dùng áo khoác" },
   { sampleVideo: [manager.sampleVideos.sample, "0:39.8 - 0:41.4"], actors: ["Trung Nguyên", "Anh Quốc", "Gia Vỹ"] },
   { sampleVideo: [manager.sampleVideos.sample, "0:42 - 0:45.3"], actors: ["Nguyễn Nhật", "Chí Vỹ", "Thanh Phú"] },
   { sampleVideo: [manager.sampleVideos.sample, "0:56.8 - 0:58.3"], actors: ["Gia Hưng", "Chí Vỹ", "Duy Khang", "Trung Nguyên", "Anh Quốc"] },
@@ -68,7 +68,7 @@ const inYard = [
   { sampleVideo: [manager.sampleVideos.sample, "2:05.8 - 2:06.5"], actors: ["Thành Vũ"] },
   { sampleVideo: [manager.sampleVideos.sample, "2:06.8 - 2:09.4"], actors: ["Duy Khang", "Xuân Vũ", "Huỳnh Nhật", "Chí Vỹ"] },
   { sampleVideo: [manager.sampleVideos.sample, "2:14.4 - 2:16"], actors: ["Gia Hưng", "Đại Doãn", "Gia Bảo", "Thanh Phú", "Thanh Vũ", "Nguyễn Nhật"] },
-  { audio: [manager.audios.audio, "2:40 - 2:47"], description: "5 người xếp tay thành hình ngôi sao, 1 người ngồi nói chuyện với ngôi sao", actors: ["Gia Vỹ", "Anh Quốc", "Trung Nguyên", "Công Đạt", "Xuân Vũ", "Thành Vũ"], preparation: "Xem các xếp ngôi sao" },
+  { audio: [manager.audios.audio, "2:40 - 2:47"], description: "5 người xếp tay thành hình ngôi sao, 1 người ngồi nói chuyện với ngôi sao", actors: ["Gia Vỹ", "Anh Quốc", "Trung Nguyên", "Công Đạt", "Xuân Vũ", "Thành Vũ"], preparation: "Xem cách xếp ngôi sao" },
   { audio: [manager.audios.audio, "2:47.2 - 2:51"], description: "1 người đi ngang, 4 đứng uốn éo", actors: ["Duy Khang", "Huỳnh Nhật", "Đại Doãn", "Chí Vỹ", "Gia Bảo"] },
   { sampleVideo: [manager.sampleVideos.sample, "2:45.5 - 2:49.5"], actors: ["Trung Nguyên", "Công Đạt", "Xuân Vũ", "Ngọc Thiện", "Thành Vũ", "Thanh Vũ", "Chí Vỹ", "Nguyễn Nhật"] },
   { audio: [manager.audios.audio, "4:13.7 - 4:17.5"], description: "Đang ở cảnh trên (đổi góc quay), 4 cặp xoay vòng tròn", actors: [""] },
@@ -103,7 +103,7 @@ manager.scenes({ title: "Nhà xe" }, gara);
 const home = [
   { sampleVideo: [manager.sampleVideos.sample, "1:14 - 1:15.8"], actors: ["Anh Quốc", "Gia Vỹ", "Gia Bảo", "Gia Hưng", "Xuân Vũ"], preparation: "Một tô / nồi gì cũng được" },
   { sampleVideo: [manager.sampleVideos.sample, "1:34.38 - 1:38.5"], actors: ["Quang Hào", "Duy Sơn", "Anh Quốc"], preparation: "Chỗ ngủ" },
-  { sampleVideo: [manager.sampleVideos.sample, "1:38.67 - 1:45.5"], actors: ["Gia Vỹ", "Ngọc Thiện"], preparation: "Máy tính, mess hồng" },
+  { sampleVideo: [manager.sampleVideos.sample, "1:38.67 - 1:45.5"], actors: ["Gia Vỹ", "Ngọc Thiện"], preparation: "Điện thoại mess hồng" },
 ];
 manager.scenes({ title: "Nhà" }, home);
 
