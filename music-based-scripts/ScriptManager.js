@@ -131,7 +131,7 @@ export default class ScriptManager {
         const scenesActors = scenes.map(({ actors }) => actors);
         scenesActors.forEach((actors, i) => {
           const query = `.scene-${index} .scene-table tr:nth-child(${i + 2})`;
-          if (!actors.includes(value)) this.#sceneContainer.querySelector(query).classList.add("hidden");
+          if (!actors.includes(value) && actors.find((e) => e.includes("cả"))?.toLowerCase() !== "tất cả") this.#sceneContainer.querySelector(query).classList.add("hidden");
         });
       });
 
