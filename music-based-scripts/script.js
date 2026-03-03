@@ -101,7 +101,7 @@ const gara = [
 manager.scenes({ title: "Nhà xe" }, gara);
 
 const home = [
-  { sampleVideo: [manager.sampleVideos.sample, "1:14 - 1:15.8"], actors: ["Anh Quốc", "Gia Vỹ", "Gia Bảo", "Thanh Phú", "Xuân Vũ"], preparation: "Một tô / nồi gì cũng được" },
+  { sampleVideo: [manager.sampleVideos.sample, "1:14 - 1:15.8"], actors: ["Anh Quốc", "Gia Vỹ", "Gia Bảo", "Gia Hưng", "Xuân Vũ"], preparation: "Một tô / nồi gì cũng được" },
   { sampleVideo: [manager.sampleVideos.sample, "1:34.38 - 1:38.5"], actors: ["Quang Hào", "Duy Sơn", "Anh Quốc"], preparation: "Chỗ ngủ" },
   { sampleVideo: [manager.sampleVideos.sample, "1:38.67 - 1:45.5"], actors: ["Gia Vỹ", "Ngọc Thiện"], preparation: "Điện thoại mess hồng" },
 ];
