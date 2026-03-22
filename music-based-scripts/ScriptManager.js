@@ -12,15 +12,17 @@ window.onkeydown = ({ key }) => {
 };
 
 export default class ScriptManager {
-  #sceneContainer = document.body.querySelector("main");
+  #scenesTable = document.body.querySelector("#scenes");
   #sampleVideosBlock = document.getElementById("sample-videos-block");
   #loadingLog = document.getElementById("loading-log");
   #actorsStatistics = document.getElementById("actors-statistics");
-  #actorSearchSelect = document.body.querySelector("#actor-search select");
+  #actorSearchSelect = document.body.querySelector("#filter .actor-search");
+  #locationSearchSelect = document.body.querySelector("#filter .location-search");
 
   #actorsStatisticsData = {};
+  #locationObjList = {};
   #actorsStatisticsAll = 0;
-  #scenesData = [];
+  #filter = { currentActor: "Tất cả", currentLocation: "Tất cả" };
 
   sampleVideos = {};
   audios = {};
@@ -38,33 +40,10 @@ export default class ScriptManager {
 
   /**
    *
-   * @param {string} text
-   */
-  center(text) {
-    const centerElement = document.createElement("div");
-    centerElement.className = "center";
-    centerElement.textContent = text;
-    this.#sceneContainer.appendChild(centerElement);
-  }
-
-  /**
-   *
    * @param {Scene[]} scenes
    */
-  scenes(metadata, scenes) {
-    const scene = document.createElement("div");
-    scene.className = `scene scene-${this.#scenesData.length}`;
-
-    this.#scenesData.push(scenes);
-
-    const title = document.createElement("div");
-    title.className = "title";
-    title.textContent = metadata.title;
-    scene.appendChild(title);
-
-    const scenesTable = document.createElement("table");
-    scenesTable.className = "scene-table";
-    scenesTable.appendChild(this.#getScenesTableHeader());
+  scenes(scenes) {
+    this.#scenesTable.appendChild(this.#getScenesTableHeader());
     scenes.forEach((scene, index) => {
       const order = index + 1;
 
@@ -89,18 +68,19 @@ export default class ScriptManager {
 
       const preparation = scene.preparation || "";
 
-      const cells = [order, musicButton, description, actors, preparation];
-      scenesTable.appendChild(this.#createTableRow(cells));
-    });
-    scene.appendChild(scenesTable);
+      const location = scene.location;
+      this.#locationObjList[location] = true;
 
-    this.#sceneContainer.appendChild(scene);
+      const cells = [order, musicButton, description, actors, preparation, location];
+      this.#scenesTable.appendChild(this.#createTableRow(cells));
+    });
   }
 
   done() {
     this.#sortActorsStatisticsData();
     this.#addActorsStatistics();
     this.#createActorSearchSelect();
+    this.#createLocationSearchSelect();
   }
 
   #sortActorsStatisticsData() {
@@ -115,6 +95,7 @@ export default class ScriptManager {
     const rows = Object.keys(this.#actorsStatisticsData).map(maper);
     const table = `<table><tr><th>STT</th><th>Tên</th><th>Số vai đã có</th></tr>${rows.join("")}</table>`;
     this.#actorsStatistics.innerHTML += table;
+    this.#actorsStatistics.innerHTML += `<div>Có ${this.#actorsStatisticsAll} cảnh cần tất cả mọi người!</div>`;
   }
 
   #createActorSearchSelect() {
@@ -122,23 +103,40 @@ export default class ScriptManager {
     const options = actors.map((actor) => `<option value="${actor}">${actor}</option>`).join("");
     this.#actorSearchSelect.innerHTML = options;
 
-    this.#actorSearchSelect.onchange = () => {
-      this.#sceneContainer.querySelectorAll(".hidden").forEach((e) => e.classList.remove("hidden"));
-      const value = this.#actorSearchSelect.value;
-      if (value === "Tất cả") return;
+    this.#actorSearchSelect.onchange = () => this.#updateFilter({ actor: this.#actorSearchSelect.value });
+  }
 
-      this.#scenesData.forEach((scenes, index) => {
-        const scenesActors = scenes.map(({ actors }) => actors);
-        scenesActors.forEach((actors, i) => {
-          const query = `.scene-${index} .scene-table tr:nth-child(${i + 2})`;
-          if (!actors.includes(value) && actors.find((e) => e.includes("cả"))?.toLowerCase() !== "tất cả") this.#sceneContainer.querySelector(query).classList.add("hidden");
-        });
-      });
+  #createLocationSearchSelect() {
+    const locations = ["Tất cả"].concat(Object.keys(this.#locationObjList));
+    const options = locations.map((location) => `<option value="${location}">${location}</option>`).join("");
+    this.#locationSearchSelect.innerHTML = options;
 
-      this.#sceneContainer.querySelectorAll(".scene").forEach((scene) => {
-        if (scene.querySelectorAll(".scene-table tr:not(.hidden)").length <= 1) scene.classList.add("hidden");
-      });
-    };
+    this.#locationSearchSelect.onchange = () => this.#updateFilter({ location: this.#locationSearchSelect.value });
+  }
+
+  #updateFilter({ actor, location }) {
+    if (actor !== undefined) this.#filter.currentActor = actor;
+    if (location !== undefined) this.#filter.currentLocation = location;
+    location = this.#filter.currentLocation;
+
+    this.#scenesTable.querySelectorAll(".hidden").forEach((e) => e.classList.remove("hidden"));
+    if (this.#filter.currentActor === "Tất cả" && this.#filter.currentLocation === "Tất cả") return;
+
+    const hiddenChildList = Array.from(this.#scenesTable.childNodes).filter((elm, index) => {
+      if (index === 0) return false;
+
+      const condition = { actor: true, location: true };
+      if (this.#filter.currentActor === "Tất cả") condition.actor = false;
+      else {
+        const actors = elm.querySelector("td:nth-child(4)").textContent;
+        if (actors.toLowerCase().includes("tất cả") || actors.includes(this.#filter.currentActor)) condition.actor = false;
+      }
+      if (this.#filter.currentLocation === "Tất cả") condition.location = false;
+      else if (elm.querySelector("td:nth-child(6)").textContent === this.#filter.currentLocation) condition.location = false;
+      return !(!condition.actor && !condition.location);
+    });
+
+    hiddenChildList.forEach((elm) => elm.classList.add("hidden"));
   }
 
   #createSampleVideo(name) {
@@ -172,7 +170,7 @@ export default class ScriptManager {
   }
 
   #getScenesTableHeader() {
-    const cells = ["Cảnh", "Đoạn nhạc", "Mô tả", "Người diễn", "Chuẩn bị / Đạo cụ"];
+    const cells = ["Cảnh", "Đoạn nhạc", "Mô tả", "Người diễn", "Chuẩn bị / Đạo cụ", "Địa điểm"];
     const tr = document.createElement("tr");
     tr.innerHTML = cells.map((c) => `<th>${c}</th>`).join("");
     return tr;

@@ -10,13 +10,11 @@ html {
 
 body {
   padding: 30px 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 main {
-  font-size: 14px;
+  display: flex;
+  flex-direction: column;
 }
 
 #sample-videos-wrapper {
@@ -54,6 +52,11 @@ main {
   margin-bottom: 10px;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+}
+
 table,
 table th,
 table td {
@@ -66,29 +69,30 @@ table td {
   padding: 4px 8px;
 }
 
-.scene-table {
+#scenes {
   margin-bottom: 30px;
+  font-size: 14px;
 }
 
-.scene-table tr.hidden {
+#scenes tr.hidden {
   display: none;
 }
 
-.scene-table td:first-child,
-.scene-table td:nth-child(2),
+#scenes td:first-child,
+#scenes td:nth-child(2),
 #actors-statistics td {
   text-align: center;
 }
 
-.scene-table td:nth-child(3) {
+#scenes td:nth-child(3) {
   min-width: 300px;
 }
 
-.scene-table td:nth-child(4) {
+#scenes td:nth-child(4) {
   min-width: 300px;
 }
 
-.scene-table td:nth-child(5) {
+#scenes td:nth-child(5) {
   min-width: 200px;
 }
 
@@ -108,6 +112,7 @@ table td {
 #actors-statistics {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 #actors-statistics .title {
@@ -116,20 +121,17 @@ table td {
   margin-bottom: 6px;
 }
 
-#actor-search {
+#actors-statistics table {
+  margin-bottom: 0.3em;
+}
+
+#filter {
   width: min(400px, 90vw);
   margin-bottom: 20px;
   font-size: 1.2em;
 }
 
-#actor-search select {
+#filter select {
   padding: 4px;
-}
-
-.scene {
-  max-width: calc(100vw - 10px);
-}
-
-.scene.hidden {
-  display: none;
+  margin-right: 8px;
 }
