@@ -1,6 +1,6 @@
-const DUT_SCHEDULE = await fetch("./dut-configs/schedule.json").then((res) => res.json());
-const DUT_LECTURER_NOTE = await fetch("./dut-configs/lecturer-note.json").then((res) => res.json());
-const DUTStartWeekDateText = await fetch("./dut-configs/start-date.json").then((res) => res.json());
+const DUT_SCHEDULE = await fetch("./configs/schedule.json").then((res) => res.json());
+const DUT_LECTURER_NOTE = await fetch("./configs/lecturer-note.json").then((res) => res.json());
+const DUTStartWeekDateText = await fetch("./configs/start-date.json").then((res) => res.json());
 const DUT_START_WEEK_DATE = new Date(DUTStartWeekDateText);
 
 const TAG_COLOR = "#a1e7ff";
@@ -13,7 +13,6 @@ window.GET_TIMETABLE_DATA = (input) => {
   const rows = htmlWrapper.querySelectorAll(".GridRow:not(.kctHeader)");
   rows.forEach((row) => {
     const cells = row.querySelectorAll(".GridCell");
-    const courseCode = cells[1].textContent;
     const courseName = cells[2].textContent;
     const lecturer = cells[6].textContent;
     const rawTimetable = cells[7].textContent;
@@ -25,11 +24,13 @@ window.GET_TIMETABLE_DATA = (input) => {
       for (let week = startWeek; week <= endWeek; week++) {
         const daysTimeable = rawTimetable.split("; ");
         daysTimeable.forEach((dayTimeable) => {
-          const [day, lessons, place] = dayTimeable.split(",");
+          const [day, lessons, room] = dayTimeable.split(",");
           const dayNumber = Number(day.replace("Thứ ", ""));
 
           const date = new Date(DUT_START_WEEK_DATE);
           date.setDate(date.getDate() + (week - 1) * 7 + (dayNumber - 2));
+          if (date.getTime() < Date.now()) return;
+
           const dateKey = date.toISOString().slice(0, 10);
           const timeKey = lessons
             .split("-")
@@ -37,7 +38,7 @@ window.GET_TIMETABLE_DATA = (input) => {
             .join("-");
 
           if (!timetable[dateKey]) timetable[dateKey] = {};
-          const data = { courseCode, courseName, lecturer, bgColor: TAG_COLOR };
+          const data = { courseName, room, lecturer, bgColor: TAG_COLOR };
           const note = DUT_LECTURER_NOTE[lecturer];
           if (note) data.note = note;
           timetable[dateKey][timeKey] = data;
