@@ -1,15 +1,42 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import {
+  Roboto_700Bold,
+  Roboto_600SemiBold,
+  Roboto_500Medium,
+  Roboto_400Regular,
+  useFonts,
+} from "@expo-google-fonts/roboto";
+import { useEffect, useMemo, useState } from "react";
 
-import { Roboto_400Regular, Roboto_700Bold, useFonts } from "@expo-google-fonts/roboto";
+import getSchedule from "./utils/get-schedule";
+import DayBlock from "./components/DayBlock";
 
 export default function App() {
-  const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
-  if (!fontsLoaded) return null;
+  const [fontsLoaded] = useFonts({
+    Roboto_700Bold,
+    Roboto_600SemiBold,
+    Roboto_500Medium,
+    Roboto_400Regular,
+  });
 
+  const [schedule, setSchedule] = useState({});
+  const scheduleBlocks = useMemo(
+    () =>
+      Object.entries(schedule).map(([key, data]) => {
+        return <DayBlock dateKey={key} dateData={data} key={key} />;
+      }),
+    [schedule],
+  );
+  useEffect(() => {
+    (async () => setSchedule(await getSchedule()))();
+  }, []);
+
+  if (!fontsLoaded) return null;
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: 40, fontFamily: "Roboto_700Bold" }}>THỜI GIAN BIỂU</Text>
+      <Text style={styles.title}>THỜI GIAN BIỂU</Text>
+      {scheduleBlocks}
       <StatusBar style="auto" />
     </View>
   );
@@ -18,8 +45,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#F3F6FC",
     alignItems: "center",
-    paddingBlock: 50
+    paddingBlock: 50,
   },
+  title: { fontSize: 40, fontFamily: "Roboto_700Bold", color: "#0f1729" },
 });
