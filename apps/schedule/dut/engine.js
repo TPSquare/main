@@ -1,6 +1,6 @@
-const DUT_SCHEDULE = await fetch("./configs/schedule.json").then((res) => res.json());
-const DUT_LECTURER_NOTE = await fetch("./configs/lecturer-note.json").then((res) => res.json());
-const DUTStartWeekDateText = await fetch("./configs/start-date.json").then((res) => res.json());
+const DUT_SCHEDULE = await fetch("./dut/configs/schedule.json").then((res) => res.json());
+const DUT_LECTURER_NOTE = await fetch("./dut/configs/lecturer-note.json").then((res) => res.json());
+const DUTStartWeekDateText = await fetch("./dut/configs/start-date.json").then((res) => res.json());
 const DUT_START_WEEK_DATE = new Date(DUTStartWeekDateText);
 
 const TAG_COLOR = "#a1e7ff";
