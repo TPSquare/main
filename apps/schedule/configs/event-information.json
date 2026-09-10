@@ -2,5 +2,6 @@
   "time": "Thời gian",
   "courseName": "Lớp học phần",
   "room": "Phòng",
-  "lecturer": "Giảng viên"
+  "lecturer": "Giảng viên",
+  "note": "Ghi chú"
 }
