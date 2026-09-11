@@ -1,5 +1,15 @@
 {
-  "frequent": {
-    "6": { "11:00": { "courseName": "ABC" } }
+  "2026-09-12": {
+    "10:30": { "content": "Phỏng vấn CTV Hội sinh viên", "place": "Phòng khách khu A (Tầng 1)" }
+  },
+  "2026-09-13": {
+    "13:00": { "content": "Trò chơi \"Bách Việt Tân Nguyên\"" },
+    "09:00": {
+      "content": "Phỏng vấn BCH LCĐ Khoa CNTT",
+      "place": "Tầng 2 I Coffee (318 Kinh Dương Vương, Liên Chiểu) "
+    }
+  },
+  "2026-09-14": {
+    "17:15": { "content": "Gặp mặt hướng dẫn Đảng viên TSV", "place": "Hội trường S02.01" }
   }
 }

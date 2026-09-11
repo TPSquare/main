@@ -1,7 +1,9 @@
 {
   "time": "Thời gian",
   "courseName": "Lớp học phần",
+  "content": "Nội dung",
   "room": "Phòng",
+  "place": "Địa điểm",
   "lecturer": "Giảng viên",
   "note": "Ghi chú"
 }

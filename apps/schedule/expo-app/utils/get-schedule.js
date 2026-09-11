@@ -1,12 +1,29 @@
 import databaseUrl from "../configs/database-url";
 
-const getDayRange = (maxDate) => {
-  const now = Date.now();
+const getDayRange = (last) => {
+  const range = Object.fromEntries([1, 2, 3, 4, 5, 6, 7].map((e) => [e, ["", ""]]));
+
+  const nowDate = new Date(Date.now());
+  const lastDate = new Date(last);
+
+  for (let i = 0; i < 7; i++) {
+    const startDate = new Date(nowDate);
+    startDate.setDate(startDate.getDate() + i);
+    range[startDate.getDay() + 1][0] = startDate.toISOString().slice(0, 10);
+
+    const endDate = new Date(lastDate);
+    endDate.setDate(endDate.getDate() - i);
+    range[endDate.getDay() + 1][1] = endDate.toISOString().slice(0, 10);
+  }
+  for (const day in range) if (range[day][1] < range[day][0]) range[day][1] = range[day][0];
+
+  return range;
 };
 
 export default async () => {
   const frequentsData = [];
   const schedule = {};
+  let lastDate = new Date(Date.now()).toISOString().slice(0, 10);
 
   const dataListAPI = `${databaseUrl}/configs/data-list.json`;
   const dataList = await fetch(dataListAPI).then((res) => res.json());
@@ -18,15 +35,41 @@ export default async () => {
       delete data.frequent;
     }
     for (const dateKey in data) {
+      if (dateKey > lastDate) lastDate = dateKey;
       if (!schedule[dateKey]) schedule[dateKey] = {};
       Object.assign(schedule[dateKey], data[dateKey]);
     }
   }
 
+  const frequent = {};
+  for (const frequentData of frequentsData)
+    for (const day in frequentData) {
+      if (!frequent[day]) frequent[day] = {};
+      Object.assign(frequent[day], frequentData[day]);
+    }
+  if (frequent["cn"] && !frequent["1"]) frequent["1"] = {};
+  if (frequent["cn"]) {
+    frequent["1"] = frequent["cn"];
+    delete frequent["cn"];
+  }
+
+  const dayRange = getDayRange(lastDate);
+  for (const day in frequent) {
+    const currentDate = new Date(dayRange[day][0]);
+    let currentDateKey;
+    do {
+      currentDateKey = currentDate.toISOString().slice(0, 10);
+      if (!schedule[currentDateKey]) schedule[currentDateKey] = {};
+      Object.assign(schedule[currentDateKey], frequent[day]);
+      currentDate.setDate(currentDate.getDate() + 7);
+    } while (currentDateKey <= dayRange[day][1]);
+  }
+
+  for (const date in schedule) {
+    const compare = ([key1], [key2]) => key1.localeCompare(key2);
+    const entries = Object.entries(schedule[date]).sort(compare);
+    schedule[date] = Object.fromEntries(entries);
+  }
   const entries = Object.entries(schedule).sort(([key1], [key2]) => key1.localeCompare(key2));
-  const sortedSchedule = Object.fromEntries(entries);
-
-  console.log(entries.map((e) => e[0]).join("\n"));
-
-  return sortedSchedule;
+  return Object.fromEntries(entries);
 };
