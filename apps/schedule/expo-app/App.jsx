@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, ScrollView } from "react-native";
 import {
   Roboto_700Bold,
   Roboto_600SemiBold,
@@ -34,11 +34,11 @@ export default function App() {
 
   if (!fontsLoaded) return null;
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} contentContainerStyle={{ alignItems: "center" }}>
       <Text style={styles.title}>THỜI GIAN BIỂU</Text>
       {scheduleBlocks}
       <StatusBar style="auto" />
-    </View>
+    </ScrollView>
   );
 }
 
@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#F3F6FC",
-    alignItems: "center",
     paddingBlock: 50,
   },
   title: { fontSize: 40, fontFamily: "Roboto_700Bold", color: "#0f1729" },

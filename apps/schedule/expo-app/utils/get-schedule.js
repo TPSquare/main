@@ -1,14 +1,18 @@
-const fetchData = async (API) => await fetch(API).then((res) => res.json());
+import databaseUrl from "../configs/database-url";
+
+const getDayRange = (maxDate) => {
+  const now = Date.now();
+};
 
 export default async () => {
   const frequentsData = [];
   const schedule = {};
 
-  const dataListAPI = "https://tpsquare.github.io/main/apps/schedule/configs/data-list.json";
-  const dataList = await fetchData(dataListAPI);
+  const dataListAPI = `${databaseUrl}/configs/data-list.json`;
+  const dataList = await fetch(dataListAPI).then((res) => res.json());
   for (const dataID of dataList) {
-    const API = `https://tpsquare.github.io/main/apps/schedule/data/${dataID}.json`;
-    const data = await fetchData(API);
+    const API = `${databaseUrl}/data/${dataID}.json`;
+    const data = await fetch(API).then((res) => res.json());
     if (data.frequent) {
       frequentsData.push(data.frequent);
       delete data.frequent;
@@ -19,5 +23,10 @@ export default async () => {
     }
   }
 
-  return schedule;
+  const entries = Object.entries(schedule).sort(([key1], [key2]) => key1.localeCompare(key2));
+  const sortedSchedule = Object.fromEntries(entries);
+
+  console.log(entries.map((e) => e[0]).join("\n"));
+
+  return sortedSchedule;
 };

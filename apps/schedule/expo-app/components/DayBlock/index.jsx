@@ -1,19 +1,19 @@
-import { useMemo } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Event from "./Event";
+
+import dayNames from "../../configs/day-names";
 
 export default function DayBlock({ dateKey, dateData }) {
   const date = dateKey.split("-").reverse().join("/");
 
-  const events = useMemo(
-    () =>
-      Object.entries(dateData).map(([time, data]) => <Event time={time} data={data} key={time} />),
-    [dateData],
-  );
+  const getEvent = ([time, data]) => <Event time={time} data={data} key={time} />;
+  const events = Object.entries(dateData).map(getEvent);
+
+  const day = dayNames[(new Date(dateKey)).getDay() + 1];
 
   return (
     <View style={styles.wrapper}>
-      <Text style={styles.title}>{date}</Text>
+      <Text style={styles.title}>{day}, {date}</Text>
       {events}
     </View>
   );
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     width: "90%",
     marginTop: 20,
-    padding: 10,
+    padding: 15,
     borderRadius: 15,
     borderWidth: 1,
     borderColor: "#dadee7",
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: "Roboto_600SemiBold",
-    fontSize: 20,
+    fontSize: 22,
     color: "#0f1729",
   },
 });
