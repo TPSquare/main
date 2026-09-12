@@ -37,7 +37,7 @@ export default function App() {
     <ScrollView style={styles.container} contentContainerStyle={{ alignItems: "center" }}>
       <Text style={styles.title}>THỜI GIAN BIỂU</Text>
       {scheduleBlocks}
-      <StatusBar style="auto" />
+      <StatusBar style="dark" />
     </ScrollView>
   );
 }
@@ -48,5 +48,5 @@ const styles = StyleSheet.create({
     backgroundColor: "#F3F6FC",
     paddingBlock: 50,
   },
-  title: { fontSize: 40, fontFamily: "Roboto_700Bold", color: "#0f1729" },
+  title: { fontSize: 40, fontFamily: "Roboto_700Bold" },
 });

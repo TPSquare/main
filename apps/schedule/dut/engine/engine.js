@@ -3,8 +3,6 @@ const DUT_LECTURER_NOTE = await fetch("../configs/lecturer-note.json").then((res
 const DUTStartWeekDateText = await fetch("../configs/start-date.json").then((res) => res.json());
 const DUT_START_WEEK_DATE = new Date(DUTStartWeekDateText);
 
-const TAG_COLOR = "#1976d2";
-
 window.GET_TIMETABLE_DATA = (input) => {
   const htmlWrapper = document.createElement("div");
   htmlWrapper.innerHTML = input;
@@ -38,7 +36,7 @@ window.GET_TIMETABLE_DATA = (input) => {
             .join("-");
 
           if (!timetable[dateKey]) timetable[dateKey] = {};
-          const data = { courseName, room, lecturer, color: TAG_COLOR };
+          const data = { courseName, room, lecturer, tag: "dut" };
           const note = DUT_LECTURER_NOTE[lecturer];
           if (note) data.note = note;
           timetable[dateKey][timeKey] = data;

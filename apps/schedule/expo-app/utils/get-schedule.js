@@ -3,7 +3,7 @@ import databaseUrl from "../configs/database-url";
 const getDayRange = (last) => {
   const range = Object.fromEntries([1, 2, 3, 4, 5, 6, 7].map((e) => [e, ["", ""]]));
 
-  const nowDate = new Date(Date.now());
+  const nowDate = new Date();
   const lastDate = new Date(last);
 
   for (let i = 0; i < 7; i++) {
@@ -20,10 +20,10 @@ const getDayRange = (last) => {
   return range;
 };
 
-export default async () => {
+const getSchedule = async () => {
   const frequentsData = [];
   const schedule = {};
-  let lastDate = new Date(Date.now()).toISOString().slice(0, 10);
+  let lastDate = new Date().toISOString().slice(0, 10);
 
   const dataListAPI = `${databaseUrl}/configs/data-list.json`;
   const dataList = await fetch(dataListAPI).then((res) => res.json());
@@ -65,11 +65,32 @@ export default async () => {
     } while (currentDateKey <= dayRange[day][1]);
   }
 
+  return schedule;
+};
+
+const sortSchedule = (schedule) => {
   for (const date in schedule) {
     const compare = ([key1], [key2]) => key1.localeCompare(key2);
     const entries = Object.entries(schedule[date]).sort(compare);
     schedule[date] = Object.fromEntries(entries);
   }
   const entries = Object.entries(schedule).sort(([key1], [key2]) => key1.localeCompare(key2));
-  return Object.fromEntries(entries);
+  for (const key in schedule) delete schedule[key];
+  Object.assign(schedule, Object.fromEntries(entries));
+};
+
+const deletePastDate = (schedule) => {
+  for (const dateKey in schedule) {
+    const lastTime = Object.keys(schedule[dateKey]).pop().split("-").pop();
+    const date = new Date(`${dateKey}T${lastTime}`);
+    if (date.getTime() < Date.now()) delete schedule[dateKey];
+    else return;
+  }
+};
+
+export default async () => {
+  const schedule = await getSchedule();
+  sortSchedule(schedule);
+  deletePastDate(schedule);
+  return schedule;
 };

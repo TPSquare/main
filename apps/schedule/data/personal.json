@@ -11,5 +11,16 @@
   },
   "2026-09-14": {
     "17:15": { "content": "Gặp mặt hướng dẫn Đảng viên TSV", "place": "Hội trường S02.01" }
+  },
+  "2026-09-16": {
+    "07:00-09:50": {
+      "courseName": "Kỹ thuật lập trình",
+      "room": "F107",
+      "tag": "dut",
+      "note": "Học bù"
+    }
+  },
+  "2026-09-19": {
+    "19:00": { "content": "Gặp mặt G20 TSNT" }
   }
 }

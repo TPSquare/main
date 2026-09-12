@@ -1,9 +1,9 @@
 import { StyleSheet, View } from "react-native";
+import { useEffect, useMemo, useState } from "react";
 
 import InfoLine from "./InfoLine";
-
 import getEventInfo from "../../utils/get-event-info";
-import { useEffect, useMemo, useState } from "react";
+import eventTagColors from "../../configs/event-tag-colors";
 
 export default function Event({ time, data }) {
   const fullData = Object.assign({ time: time.replace("-", " - ") }, data);
@@ -20,7 +20,7 @@ export default function Event({ time, data }) {
   const getLine = ([key, name]) => <InfoLine name={name} value={fullData[key]} key={key} />;
   const infoLines = validInfo.map(getLine);
   return (
-    <View style={{ ...styles.container, backgroundColor: data.color }}>
+    <View style={{ ...styles.container, backgroundColor: eventTagColors[data.tag] || "#434343" }}>
       <View style={styles.wrapper}>{infoLines}</View>
     </View>
   );
