@@ -14,6 +14,7 @@ import DayBlock from "./components/DayBlock";
 import { syncScheduleNotifications } from "./utils/schedule-notifications";
 
 export default function App() {
+  const [appKey, setAppKey] = useState(0);
   const [schedule, setSchedule] = useState({});
 
   const [fontsLoaded] = useFonts({
@@ -29,7 +30,7 @@ export default function App() {
       setSchedule(schedule);
       syncScheduleNotifications(schedule);
     })();
-  }, []);
+  }, [appKey]);
 
   const scheduleBlocks = useMemo(
     () =>
@@ -42,6 +43,7 @@ export default function App() {
   const [refreshing, setRefreshing] = useState(false);
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
+    setAppKey((prev) => prev + 1);
     setTimeout(() => setRefreshing(false), 1000);
   }, []);
 
