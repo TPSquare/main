@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, ScrollView } from "react-native";
+import { StyleSheet, Text, ScrollView, RefreshControl } from "react-native";
 import {
   Roboto_700Bold,
   Roboto_600SemiBold,
@@ -7,7 +7,7 @@ import {
   Roboto_400Regular,
   useFonts,
 } from "@expo-google-fonts/roboto";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import getSchedule from "./utils/get-schedule";
 import DayBlock from "./components/DayBlock";
@@ -39,9 +39,19 @@ export default function App() {
     [schedule],
   );
 
+  const [refreshing, setRefreshing] = useState(false);
+  const onRefresh = useCallback(async () => {
+    setRefreshing(true);
+    setTimeout(() => setRefreshing(false), 1000);
+  }, []);
+
   if (!fontsLoaded) return null;
   return (
-    <ScrollView style={styles.container} contentContainerStyle={{ alignItems: "center" }}>
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={{ alignItems: "center" }}
+      refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
+    >
       <Text style={styles.title}>LỊCH TRÌNH</Text>
       {scheduleBlocks}
       <StatusBar style="dark" />

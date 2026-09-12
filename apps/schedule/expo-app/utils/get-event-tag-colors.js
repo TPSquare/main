@@ -1,8 +1,8 @@
 import databaseUrl from "../configs/database-url";
+import fetchJSON from "./fetch-json";
 const eventTagColorsAPI = `${databaseUrl}/configs/event-tag-colors.json`;
 let eventTagColorsPromise = null;
 export default function getEventTagColors() {
-  if (!eventTagColorsPromise)
-    eventTagColorsPromise = fetch(eventTagColorsAPI).then((res) => res.json());
+  if (!eventTagColorsPromise) eventTagColorsPromise = fetchJSON(eventTagColorsAPI);
   return eventTagColorsPromise;
 }

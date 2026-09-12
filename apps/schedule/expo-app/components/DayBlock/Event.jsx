@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 import InfoLine from "./InfoLine";
@@ -29,7 +29,7 @@ export default function Event({ time, data }) {
   );
   const infoLines = useMemo(() => validInfo.map(getLine), [getLine]);
 
-  if (!tagColor) return null;
+  if (!tagColor) return <Text>Đang tải...</Text>;
   return (
     <View style={{ ...styles.container, backgroundColor: tagColor }}>
       <View style={styles.wrapper}>{infoLines}</View>

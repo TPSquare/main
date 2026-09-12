@@ -1,4 +1,5 @@
 import databaseUrl from "../configs/database-url";
+import fetchJSON from "../utils/fetch-json";
 
 const getDayRange = (last) => {
   const range = Object.fromEntries([1, 2, 3, 4, 5, 6, 7].map((e) => [e, ["", ""]]));
@@ -26,10 +27,10 @@ const getSchedule = async () => {
   let lastDate = new Date().toISOString().slice(0, 10);
 
   const dataListAPI = `${databaseUrl}/configs/data-list.json`;
-  const dataList = await fetch(dataListAPI).then((res) => res.json());
+  const dataList = await fetchJSON(dataListAPI);
   for (const dataID of dataList) {
     const API = `${databaseUrl}/data/${dataID}.json`;
-    const data = await fetch(API).then((res) => res.json());
+    const data = await fetchJSON(API);
     if (data.frequent) {
       frequentsData.push(data.frequent);
       delete data.frequent;
