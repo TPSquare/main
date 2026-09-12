@@ -20,7 +20,7 @@ function getNotifications(schedule) {
   for (const dateKey in schedule) {
     if (notifications.length > 50) break;
     for (const time in schedule[dateKey]) {
-      const startTime = time.split("-")[0];
+      const timeText = time.replace("-", " - ");
       const placeText = schedule[dateKey][time].place
         ? ` tại ${schedule[dateKey][time].place}`
         : "";
@@ -29,12 +29,12 @@ function getNotifications(schedule) {
         notifications.push({
           content: {
             title: `${message}: ${schedule[dateKey][time].content}`,
-            body: `Thời gian ${startTime}${placeText}`,
+            body: `Thời gian ${timeText}${placeText}`,
             sound: true,
           },
           trigger: date ? { type, date } : null,
         });
-      const createDateString = `${dateKey}T${startTime}`;
+      const createDateString = `${dateKey}T${timeText}`;
 
       const oneDayEarlier = new Date(createDateString);
       oneDayEarlier.setDate(oneDayEarlier.getDate() - 1);
@@ -45,6 +45,8 @@ function getNotifications(schedule) {
       oneHourEarlier.setHours(oneHourEarlier.getHours() - 1);
       if (oneHourEarlier.getTime() <= Date.now()) pushNotification("Nhắc nhở lịch trình");
       else pushNotification("Còn 1 giờ nữa", oneHourEarlier);
+
+      pushNotification("Ngay lúc này", new Date(createDateString));
     }
   }
   return notifications.slice(0, 50);
