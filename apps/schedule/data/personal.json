@@ -21,8 +21,11 @@
     }
   },
   "2026-09-14": {
-    "17:15": { "content": "Gặp mặt hướng dẫn Đảng viên TSV", "place": "Hội trường S02.01" },
-    "tag": "!"
+    "17:15": {
+      "content": "Gặp mặt hướng dẫn Đảng viên TSV",
+      "place": "Hội trường S02.01",
+      "tag": "!"
+    }
   },
   "2026-09-16": {
     "07:00-09:50": {
@@ -33,15 +36,16 @@
     }
   },
   "2026-09-18": {
-    "12:00": { "content": "Hạn nộp báo cáo Nhập môn CNS & TTNT", "note": "Phải có trích dẫn" },
-    "tag": "!"
+    "12:00": {
+      "content": "Hạn nộp báo cáo Nhập môn CNS & TTNT",
+      "note": "Phải có trích dẫn",
+      "tag": "!"
+    }
   },
   "2026-09-19": {
-    "19:00": { "content": "Gặp mặt G20 TSNT" },
-    "tag": "!"
+    "19:00": { "content": "Gặp mặt G20 TSNT", "tag": "!" }
   },
-  "2025-09-20": {
-    "13:00": { "content": "Trò chơi \"Bách Việt Tân Nguyên\"", "place": "Khu F" },
-    "tag": "!"
+  "2026-09-20": {
+    "13:00": { "content": "Trò chơi \"Bách Việt Tân Nguyên\"", "place": "Khu F", "tag": "!" }
   }
 }
