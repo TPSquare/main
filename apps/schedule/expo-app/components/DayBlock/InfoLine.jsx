@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View } from "react-native";
 
-export default function InfoLine({ name, value }) {
+export default function InfoLine({ name, value, tagColor }) {
   return (
     <View style={styles.wrapper}>
-      <Text style={styles.name}>{name}: </Text>
+      <Text style={{ ...styles.name, color: tagColor }}>{name}: </Text>
       <Text style={styles.value}>{value}</Text>
     </View>
   );

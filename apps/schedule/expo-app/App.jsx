@@ -11,8 +11,11 @@ import { useEffect, useMemo, useState } from "react";
 
 import getSchedule from "./utils/get-schedule";
 import DayBlock from "./components/DayBlock";
+import { syncScheduleNotifications } from "./utils/schedule-notifications";
 
 export default function App() {
+  const [schedule, setSchedule] = useState({});
+
   const [fontsLoaded] = useFonts({
     Roboto_700Bold,
     Roboto_600SemiBold,
@@ -20,7 +23,14 @@ export default function App() {
     Roboto_400Regular,
   });
 
-  const [schedule, setSchedule] = useState({});
+  useEffect(() => {
+    (async () => {
+      const schedule = await getSchedule();
+      setSchedule(schedule);
+      syncScheduleNotifications(schedule);
+    })();
+  }, []);
+
   const scheduleBlocks = useMemo(
     () =>
       Object.entries(schedule).map(([key, data]) => {
@@ -28,9 +38,6 @@ export default function App() {
       }),
     [schedule],
   );
-  useEffect(() => {
-    (async () => setSchedule(await getSchedule()))();
-  }, []);
 
   if (!fontsLoaded) return null;
   return (

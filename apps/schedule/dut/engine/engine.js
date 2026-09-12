@@ -11,7 +11,7 @@ window.GET_TIMETABLE_DATA = (input) => {
   const rows = htmlWrapper.querySelectorAll(".GridRow:not(.kctHeader)");
   rows.forEach((row) => {
     const cells = row.querySelectorAll(".GridCell");
-    const courseName = cells[2].textContent;
+    const content = cells[2].textContent;
     const lecturer = cells[6].textContent;
     const rawTimetable = cells[7].textContent;
     const rawWeeks = cells[8].textContent;
@@ -22,7 +22,7 @@ window.GET_TIMETABLE_DATA = (input) => {
       for (let week = startWeek; week <= endWeek; week++) {
         const daysTimeable = rawTimetable.split("; ");
         daysTimeable.forEach((dayTimeable) => {
-          const [day, lessons, room] = dayTimeable.split(",");
+          const [day, lessons, place] = dayTimeable.split(",");
           const dayNumber = Number(day.replace("Thứ ", ""));
 
           const date = new Date(DUT_START_WEEK_DATE);
@@ -38,7 +38,7 @@ window.GET_TIMETABLE_DATA = (input) => {
             .join("-");
 
           if (!timetable[dateKey]) timetable[dateKey] = {};
-          const data = { courseName, room, lecturer, tag: "dut" };
+          const data = { content, place, lecturer, tag: "dut" };
           const note = DUT_LECTURER_NOTE[lecturer];
           if (note) data.note = note;
           timetable[dateKey][timeKey] = data;

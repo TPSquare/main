@@ -1,9 +1,5 @@
 {
-  "2026-09-12": {
-    "10:30": { "content": "Phỏng vấn CTV Hội sinh viên", "place": "Phòng khách khu A (Tầng 1)" }
-  },
   "2026-09-13": {
-    "13:00": { "content": "Trò chơi \"Bách Việt Tân Nguyên\"" },
     "09:00": {
       "content": "Phỏng vấn BCH LCĐ Khoa CNTT",
       "place": "Tầng 2 I Coffee (318 Kinh Dương Vương, Liên Chiểu) "
@@ -20,7 +16,9 @@
       "note": "Học bù"
     }
   },
+  "2026-09-18": { "12:00": { "content": "Hạn nộp báo cáo Nhập môn CNS & TTNT", "note": "Phải có trích dẫn" } },
   "2026-09-19": {
     "19:00": { "content": "Gặp mặt G20 TSNT" }
-  }
+  },
+  "2025-09-20": { "13:00": { "content": "Trò chơi \"Bách Việt Tân Nguyên\"", "place": "Khu F" } }
 }
