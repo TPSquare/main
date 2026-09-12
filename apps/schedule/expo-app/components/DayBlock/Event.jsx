@@ -29,6 +29,7 @@ export default function Event({ time, data }) {
   );
   const infoLines = useMemo(() => validInfo.map(getLine), [getLine]);
 
+  if (!tagColor) return null;
   return (
     <View style={{ ...styles.container, backgroundColor: tagColor }}>
       <View style={styles.wrapper}>{infoLines}</View>

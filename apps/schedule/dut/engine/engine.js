@@ -32,10 +32,11 @@ window.GET_TIMETABLE_DATA = (input) => {
           if (date.getTime() < nowDate.getTime()) return;
 
           const dateKey = date.toISOString().slice(0, 10);
-          const timeKey = lessons
-            .split("-")
-            .map((e, i) => DUT_SCHEDULE[e][i])
-            .join("-");
+
+          const timeKey = (() => {
+            const source = content.includes("GDTC") ? ["gdtc", "gdtc"] : lessons.split("-");
+            return source.map((e, i) => DUT_SCHEDULE[e][i]).join("-");
+          })();
 
           if (!timetable[dateKey]) timetable[dateKey] = {};
           const data = { content, place, lecturer, tag: "dut" };

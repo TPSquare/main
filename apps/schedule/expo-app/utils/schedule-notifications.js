@@ -57,7 +57,7 @@ async function sendNotifications(notifications) {
 
 export async function syncScheduleNotifications(schedule) {
   await requestPermissions();
-  await Notifications.cancelAllScheduledNotificationsAsync();
   const notifications = getNotifications(schedule);
+  await Notifications.cancelAllScheduledNotificationsAsync();
   await sendNotifications(notifications);
 }

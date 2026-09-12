@@ -1,4 +1,12 @@
 {
+  "frequent": {
+    "2": { "14:00-15:00": { "content": "Ôn tiếng Anh đầu" }, "16:30": { "content": "Chạy bộ" } },
+    "3": { "16:00-17:00": { "content": "Ôn tiếng Anh đầu" } },
+    "4": { "16:30": { "content": "Chạy bộ" } },
+    "5": { "19:00-20:00": { "content": "Ôn tiếng Anh đầu" } },
+    "6": { "14:00": { "content": "Code trên bkdnoj.com" } },
+    "cn": { "08:00-090:0": { "content": "Ôn tiếng Anh đầu" } }
+  },
   "2026-09-13": {
     "09:00": {
       "content": "Phỏng vấn BCH LCĐ Khoa CNTT",
@@ -10,13 +18,15 @@
   },
   "2026-09-16": {
     "07:00-09:50": {
-      "courseName": "Kỹ thuật lập trình",
-      "room": "F107",
+      "content": "Kỹ thuật lập trình",
+      "place": "F107",
       "tag": "dut",
       "note": "Học bù"
     }
   },
-  "2026-09-18": { "12:00": { "content": "Hạn nộp báo cáo Nhập môn CNS & TTNT", "note": "Phải có trích dẫn" } },
+  "2026-09-18": {
+    "12:00": { "content": "Hạn nộp báo cáo Nhập môn CNS & TTNT", "note": "Phải có trích dẫn" }
+  },
   "2026-09-19": {
     "19:00": { "content": "Gặp mặt G20 TSNT" }
   },
