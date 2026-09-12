@@ -1,5 +1,5 @@
 import databaseUrl from "../configs/database-url";
-const eventTagColorsAPI = `${databaseUrl}/configs/event-information.json`;
+const eventTagColorsAPI = `${databaseUrl}/configs/event-tag-colors.json`;
 let eventTagColorsPromise = null;
 export default function getEventTagColors() {
   if (!eventTagColorsPromise)

@@ -13,21 +13,21 @@ export default function Event({ time, data }) {
 
   const [tagColor, setTagColor] = useState(null);
   useEffect(() => {
-    (async () => setTagColor((await getEventTagColors()[data.tag]) || "#434343"))();
+    (async () => setTagColor((await getEventTagColors())[data.tag] || "#434343"))();
   }, []);
 
   const validInfo = useMemo(
-    () => Object.entries(eventInfo).filter(([key]) => data[key]),
+    () => Object.entries(eventInfo).filter(([key]) => data[key] || key === "time"),
     [eventInfo],
   );
   const getLine = useCallback(
     ([key, name]) => {
-      const value = { ...data[key], time: time.replace("-", " - ") };
+      const value = key === "time" ? time.replace("-", " - ") : data[key];
       return <InfoLine name={name} value={value} tagColor={data.tag} key={key} />;
     },
     [tagColor],
   );
-  const infoLines = validInfo.map(getLine);
+  const infoLines = useMemo(() => validInfo.map(getLine), [getLine]);
 
   return (
     <View style={{ ...styles.container, backgroundColor: tagColor }}>
@@ -37,7 +37,7 @@ export default function Event({ time, data }) {
 }
 
 const styles = StyleSheet.create({
-  container: { marginBlock: 20, borderRadius: 5 },
+  container: { marginBlock: 20, borderRadius: 4 },
   wrapper: {
     marginLeft: 3,
     paddingLeft: 8,
