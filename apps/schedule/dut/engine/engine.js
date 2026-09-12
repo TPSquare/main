@@ -27,7 +27,9 @@ window.GET_TIMETABLE_DATA = (input) => {
 
           const date = new Date(DUT_START_WEEK_DATE);
           date.setDate(date.getDate() + (week - 1) * 7 + (dayNumber - 2));
-          if (date.getTime() < Date.now()) return;
+          const nowDate = new Date();
+          nowDate.setHours(0, 0, 0, 0);
+          if (date.getTime() < nowDate.getTime()) return;
 
           const dateKey = date.toISOString().slice(0, 10);
           const timeKey = lessons

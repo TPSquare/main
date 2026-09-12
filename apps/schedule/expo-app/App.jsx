@@ -35,7 +35,7 @@ export default function App() {
   if (!fontsLoaded) return null;
   return (
     <ScrollView style={styles.container} contentContainerStyle={{ alignItems: "center" }}>
-      <Text style={styles.title}>THỜI GIAN BIỂU</Text>
+      <Text style={styles.title}>LỊCH TRÌNH</Text>
       {scheduleBlocks}
       <StatusBar style="dark" />
     </ScrollView>
