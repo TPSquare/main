@@ -34,18 +34,21 @@ function getNotifications(schedule) {
           },
           trigger: date ? { type, date } : null,
         });
-      const createDateString = `${dateKey}T${timeText}`;
+
+      const createDateString = `${dateKey}T${time.split("-")[0]}`;
+      let pushNow = false;
 
       const oneDayEarlier = new Date(createDateString);
       oneDayEarlier.setDate(oneDayEarlier.getDate() - 1);
-      if (oneDayEarlier.getTime() <= Date.now()) pushNotification("Nhắc nhở lịch trình");
+      if (oneDayEarlier.getTime() <= Date.now()) pushNow = true;
       else pushNotification("Còn 1 ngày nữa", oneDayEarlier);
 
       const oneHourEarlier = new Date(createDateString);
       oneHourEarlier.setHours(oneHourEarlier.getHours() - 1);
-      if (oneHourEarlier.getTime() <= Date.now()) pushNotification("Nhắc nhở lịch trình");
+      if (oneHourEarlier.getTime() <= Date.now()) pushNow = true;
       else pushNotification("Còn 1 giờ nữa", oneHourEarlier);
 
+      if (pushNow) pushNotification("Nhắc nhở lịch trình");
       pushNotification("Ngay lúc này", new Date(createDateString));
     }
   }
