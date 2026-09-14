@@ -1,5 +1,0 @@
-{
-  "default": { "color": "#434343", "adretimes": [1] },
-  "dut": { "color": "#0065cb", "adretimes": [1, 3] },
-  "!": { "color": "#FF0000", "adretimes": [1, 12] }
-}

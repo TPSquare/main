@@ -38,6 +38,10 @@ const getSchedule = async () => {
     for (const dateKey in data) {
       if (dateKey > lastDate) lastDate = dateKey;
       if (!schedule[dateKey]) schedule[dateKey] = {};
+
+      for (const time in data[dateKey])
+        if (!data[dateKey][time].tag) data[dateKey][time].tag = "special";
+
       Object.assign(schedule[dateKey], data[dateKey]);
     }
   }
@@ -45,6 +49,9 @@ const getSchedule = async () => {
   const frequent = {};
   for (const frequentData of frequentsData)
     for (const day in frequentData) {
+      for (const time in frequentData[day])
+        if (!frequentData[day][time].tag) frequentData[day][time].tag = "default";
+
       if (!frequent[day]) frequent[day] = {};
       Object.assign(frequent[day], frequentData[day]);
     }

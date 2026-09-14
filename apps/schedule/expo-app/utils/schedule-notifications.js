@@ -1,4 +1,5 @@
 import * as Notifications from "expo-notifications";
+import { useEffect } from "react";
 import { BackHandler, Platform } from "react-native";
 
 Notifications.setNotificationHandler({
@@ -15,7 +16,7 @@ async function requestPermissions() {
   if (status !== "granted") if (Platform.OS === "android") BackHandler.exitApp();
 }
 
-function getNotifications(schedule) {
+function getNotifications(schedule, tagsConfig) {
   const notifications = [];
   for (const dateKey in schedule) {
     if (notifications.length > 50) break;
@@ -35,21 +36,18 @@ function getNotifications(schedule) {
           trigger: date ? { type, date } : null,
         });
 
-      const createDateString = `${dateKey}T${time.split("-")[0]}`;
+      const currentDate = new Date(`${dateKey}T${time.split("-")[0]}`);
+      if (currentDate.getTime() <= Date.now()) continue;
+
       let pushNow = false;
-
-      const oneDayEarlier = new Date(createDateString);
-      oneDayEarlier.setDate(oneDayEarlier.getDate() - 1);
-      if (oneDayEarlier.getTime() <= Date.now()) pushNow = true;
-      else pushNotification("Còn 1 ngày nữa", oneDayEarlier);
-
-      const oneHourEarlier = new Date(createDateString);
-      oneHourEarlier.setHours(oneHourEarlier.getHours() - 1);
-      if (oneHourEarlier.getTime() <= Date.now()) pushNow = true;
-      else pushNotification("Còn 1 giờ nữa", oneHourEarlier);
-
+      for (const adretime of tagsConfig[schedule[dateKey][time].tag].adretimes) {
+        const adredate = new Date(currentDate);
+        adredate.setHours(adredate.getHours() - adretime);
+        if (adredate.getTime() <= Date.now()) pushNow = true;
+        else pushNotification(`Còn ${adretime} giờ`, adredate);
+      }
       if (pushNow) pushNotification("Nhắc nhở lịch trình");
-      pushNotification("Ngay lúc này", new Date(createDateString));
+      pushNotification("Ngay lúc này", currentDate);
     }
   }
   return notifications.slice(0, 50);
@@ -60,9 +58,13 @@ async function sendNotifications(notifications) {
     await Notifications.scheduleNotificationAsync(notification);
 }
 
-export async function syncScheduleNotifications(schedule) {
-  await requestPermissions();
-  const notifications = getNotifications(schedule);
-  await Notifications.cancelAllScheduledNotificationsAsync();
-  await sendNotifications(notifications);
+export default function syncScheduleNotifications(schedule, tagsConfig) {
+  useEffect(() => {
+    (async () => {
+      await requestPermissions();
+      const notifications = getNotifications(schedule, tagsConfig);
+      await Notifications.cancelAllScheduledNotificationsAsync();
+      await sendNotifications(notifications);
+    })();
+  }, [schedule, tagsConfig]);
 }
