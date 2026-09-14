@@ -13,12 +13,6 @@
     },
     "cn": { "08:00-09:00": { "content": "Ôn tiếng Anh đầu vào" } }
   },
-  "2026-09-14": {
-    "17:15": {
-      "content": "Gặp mặt hướng dẫn Đảng viên TSV",
-      "place": "Hội trường S02.01"
-    }
-  },
   "2026-09-16": {
     "07:00-09:50": {
       "content": "Kỹ thuật lập trình",
@@ -30,7 +24,12 @@
   "2026-09-18": {
     "12:00": {
       "content": "Hạn nộp báo cáo Nhập môn CNS & TTNT",
-      "note": "Phải có trích dẫn"
+      "note": "Phải có trích dẫn",
+      "tag": "deadline"
+    },
+    "23:00": {
+      "content": "Hạn nộp bài thu hoạch Nhập môn ngành",
+      "tag": "deadline"
     }
   },
   "2026-09-19": { "19:00": { "content": "Gặp mặt G20 TSNT" } },
