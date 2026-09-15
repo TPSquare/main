@@ -33,5 +33,12 @@
     }
   },
   "2026-09-19": { "19:00": { "content": "Gặp mặt G20 TSNT" } },
-  "2026-09-20": { "13:00": { "content": "Trò chơi \"Bách Việt Tân Nguyên\"", "place": "Khu F" } }
+  "2026-09-20": { "13:00": { "content": "Trò chơi \"Bách Việt Tân Nguyên\"", "place": "Khu F" } },
+  "2026-10-04": {
+    "07:00-10:45": {
+      "content": "Thi tiếng Anh đầu vào",
+      "place": "Khu giảng đường F và H",
+      "note": "CCCD, bút chì 2B, bút mực, tẩy"
+    }
+  }
 }
