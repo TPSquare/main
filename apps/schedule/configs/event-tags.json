@@ -1,6 +1,6 @@
 {
   "default": { "color": "#000000", "adretimes": [1] },
-  "dut": { "color": "#00008b", "adretimes": [1, 3] },
+  "dut": { "color": "#00008b", "adretimes": [1, 3, 10] },
   "special": { "color": "#FF0000", "adretimes": [1, 12] },
   "deadline": { "color": "#ff8c00", "adretimes": [1, 3, 12, 24, 36] }
 }
