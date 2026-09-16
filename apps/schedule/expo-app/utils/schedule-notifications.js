@@ -25,13 +25,13 @@ function getNotifications(schedule, tagsConfig) {
       const placeText = schedule[dateKey][time].place
         ? ` tại ${schedule[dateKey][time].place}`
         : "";
-      const noteText = schedule[dateKey][time].place ? "\nMở ứng dụng để xem ghi chú." : "";
+      const noteText = schedule[dateKey][time].place ? "\nMở ứng dụng để xem ghi chú" : "";
       const type = Notifications.SchedulableTriggerInputTypes.DATE;
       const pushNotification = (message, date) =>
         notifications.push({
           content: {
             title: `${message}: ${schedule[dateKey][time].content}`,
-            body: `Thời gian ${timeText}${placeText}.${noteText}`,
+            body: `Thời gian ${timeText}${placeText}${noteText}`,
             sound: true,
           },
           trigger: date ? { type, date } : null,
