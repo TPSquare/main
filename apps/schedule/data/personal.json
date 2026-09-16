@@ -13,24 +13,13 @@
     },
     "cn": { "08:00-09:00": { "content": "Ôn tiếng Anh đầu vào" } }
   },
-  "2026-09-16": {
-    "07:00-09:50": {
-      "content": "Kỹ thuật lập trình",
-      "place": "F107",
-      "tag": "dut",
-      "note": "Học bù"
-    }
-  },
-  "2026-09-17": {
-    "17:30": { "content": "Họp chi bộ hàng tháng", "place": "Hội trường S02.01" },
-    "23:00": { "content": "Hạn đăng kí ICPC" }
-  },
   "2026-09-18": {
     "12:00": {
       "content": "Hạn nộp báo cáo Nhập môn CNS & TTNT",
       "note": "Phải có trích dẫn",
       "tag": "deadline"
     },
+    "17:30": { "content": "Họp chi bộ hàng tháng", "place": "Hội trường S02.01" },
     "23:00": {
       "content": "Hạn nộp bài thu hoạch Nhập môn ngành",
       "tag": "deadline"

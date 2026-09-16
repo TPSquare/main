@@ -19,7 +19,6 @@ async function requestPermissions() {
 function getNotifications(schedule, tagsConfig) {
   const notifications = [];
   for (const dateKey in schedule) {
-    if (notifications.length > 50) break;
     for (const time in schedule[dateKey]) {
       const timeText = time.replace("-", " - ");
       const placeText = schedule[dateKey][time].place
@@ -51,6 +50,12 @@ function getNotifications(schedule, tagsConfig) {
       pushNotification("Ngay lúc này", currentDate);
     }
   }
+  notifications.sort((a, b) => {
+    if (a.trigger === null && b.trigger === null) return 0;
+    if (a.trigger === null) return -1;
+    if (b.trigger === null) return 1;
+    return a.trigger.date.getTime() - b.trigger.date.getTime();
+  });
   return notifications.slice(0, 50);
 }
 
