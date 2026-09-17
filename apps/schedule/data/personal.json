@@ -23,10 +23,14 @@
     "23:00": {
       "content": "Hạn nộp bài thu hoạch Nhập môn ngành",
       "tag": "deadline"
-    }
+    },
+    "19:00": { "content": "Deadline LCĐ", "tag": "deadline" }
   },
   "2026-09-19": {
-    "19:00": { "content": "Gặp mặt G20 TSNT" },
+    "19:00": {
+      "content": "Gặp mặt G20 TSNT",
+      "place": "Cuckoo House Coffee | 34 Hồ Phi Tích, Hòa Xuân, Đà Nẵng"
+    },
     "13:30": { "content": "BK START - Sự kiện chào đón TSV", "place": "Khu F" }
   },
   "2026-09-20": { "13:00": { "content": "Trò chơi \"Bách Việt Tân Nguyên\"", "place": "Khu F" } },
