@@ -46,7 +46,15 @@ function getNotifications(schedule, tagsConfig) {
         if (adredate.getTime() <= Date.now()) pushNow = true;
         else pushNotification(`Còn ${adretime} giờ`, adredate);
       }
-      if (pushNow) pushNotification("Nhắc nhở lịch trình");
+      if (pushNow) {
+        const delta = currentDate.getTime() - Date.now();
+        const hours = Math.floor(delta / (1000 * 60 * 60));
+        if (hours) pushNotification(`Còn ${hours} giờ`);
+        else {
+          const minutes = Math.ceil(delta / (1000 * 60));
+          pushNotification(`Còn ${minutes} phút`);
+        }
+      }
       pushNotification("Ngay lúc này", currentDate);
     }
   }

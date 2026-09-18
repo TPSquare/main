@@ -1,2 +1,6 @@
 eas build --profile apk --platform android
 eas build --profile development --platform android
+
+npx expo prebuild --platform android
+cd android
+./gradlew assembleRelease

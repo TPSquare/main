@@ -9,37 +9,36 @@
     "5": { "08:00-09:00": { "content": "Ôn tiếng Anh đầu vào" } },
     "6": {
       "14:00": { "content": "Code trên bkdnoj.com" },
-      "16:00-17:00": { "content": "Ôn tiếng Anh đầu vào" }
+      "16:30": { "content": "Chạy bộ" }
     },
     "cn": { "08:00-09:00": { "content": "Ôn tiếng Anh đầu vào" } }
   },
-  "2026-09-18": {
-    "12:00": {
-      "content": "Hạn nộp báo cáo Nhập môn CNS & TTNT",
-      "note": "Phải có trích dẫn",
-      "tag": "deadline"
-    },
-    "17:30": { "content": "Họp chi bộ hàng tháng", "place": "Hội trường S02.01" },
-    "23:00": {
-      "content": "Hạn nộp bài thu hoạch Nhập môn ngành",
-      "tag": "deadline"
-    },
-    "19:00": { "content": "Deadline LCĐ", "tag": "deadline" }
-  },
   "2026-09-19": {
+    "17:30": { "content": "Điểm danh lớp - BK Start", "place": "Trước tòa C5" },
     "19:00": {
       "content": "Gặp mặt G20 TSNT",
       "place": "Cuckoo House Coffee | 34 Hồ Phi Tích, Hòa Xuân, Đà Nẵng"
-    },
-    "13:30": { "content": "BK START - Sự kiện chào đón TSV", "place": "Khu F" }
+    }
   },
   "2026-09-20": { "13:00": { "content": "Trò chơi \"Bách Việt Tân Nguyên\"", "place": "Khu F" } },
+  "2026-09-23": { "17:30-19:00": { "content": "Sinh hoạt chủ nhiệm", "place": "E2.105" } },
   "2026-09-24": { "15:30": { "content": "Phản hồi vắng SHCD", "place": "Phòng S06.08" } },
+  "2026-09-27": {
+    "6:00": { "content": "Hội đón TSV - Ban nội dung LCĐ", "place": "Khuôn viên trường" }
+  },
   "2026-10-04": {
     "07:00-10:45": {
       "content": "Thi tiếng Anh đầu vào",
       "place": "Khu giảng đường F và H",
       "note": "CCCD, bút chì 2B, bút mực, tẩy"
+    }
+  },
+  "2026-10-18": {
+    "13:45": {
+      "content": "Lên xe đi học QP",
+      "note": "Đợt 2, xe số 8",
+      "place": "Trung tâm thông tin và học liệu số",
+      "tag": "deadline"
     }
   }
 }
