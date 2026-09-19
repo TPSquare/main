@@ -12,18 +12,18 @@
       "16:30": { "content": "Chạy bộ" }
     },
     "cn": {
-      "08:00-09:00": { "content": "Ôn tiếng Anh đầu vào" },
+      "07:50": { "content": "Ôn ICPC", "place": "MSTEAM" },
       "14:00-15:00": { "content": "Ôn tiếng Anh đầu vào" }
     }
   },
-  "2026-09-19": {
-    "17:30": { "content": "Điểm danh lớp - BK Start", "place": "Trước tòa C5" },
-    "19:00": {
-      "content": "Gặp mặt G20 TSNT",
-      "place": "Cuckoo House Coffee | 34 Hồ Phi Tích, Hòa Xuân, Đà Nẵng"
+  "2026-09-20": {
+    "13:00": { "content": "Trò chơi \"Bách Việt Tân Nguyên\"", "place": "Khu F" },
+    "20:00": {
+      "content": "Họp ban phong trào LCĐ",
+      "link": "https://meet.google.com/vjy-ywgv-ioq",
+      "map": { "name": "abc", "link": "https://meet.google.com/vjy-ywgv-ioq" }
     }
   },
-  "2026-09-20": { "13:00": { "content": "Trò chơi \"Bách Việt Tân Nguyên\"", "place": "Khu F" } },
   "2026-09-23": { "17:30-19:00": { "content": "Sinh hoạt chủ nhiệm", "place": "E2.105" } },
   "2026-09-24": { "15:30": { "content": "Phản hồi vắng SHCD", "place": "Phòng S06.08" } },
   "2026-09-27": {
