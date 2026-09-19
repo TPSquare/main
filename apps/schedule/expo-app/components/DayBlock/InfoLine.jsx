@@ -1,11 +1,29 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Linking, StyleSheet, Text, View } from "react-native";
 
-export default function InfoLine({ name, value, tagColor }) {
+function InfoLine({ children, name, tagColor }) {
   return (
     <View style={styles.wrapper}>
       <Text style={{ ...styles.name, color: tagColor }}>{name}: </Text>
-      <Text style={styles.value}>{value}</Text>
+      {children}
     </View>
+  );
+}
+
+export function InfoLineText({ name, text, tagColor }) {
+  return (
+    <InfoLine name={name} tagColor={tagColor}>
+      <Text style={styles.text}>{text}</Text>
+    </InfoLine>
+  );
+}
+
+export function InfoLineLink({ name, link, anchor, tagColor }) {
+  return (
+    <InfoLine name={name} tagColor={tagColor}>
+      <Text style={{ ...styles.text, ...styles.link }} onPress={() => Linking.openURL(link)}>
+        {anchor}
+      </Text>
+    </InfoLine>
   );
 }
 
@@ -18,9 +36,13 @@ const styles = StyleSheet.create({
     fontFamily: "Roboto_500Medium",
     fontSize,
   },
-  value: {
+  text: {
     flexShrink: 1,
     fontFamily: "Roboto_400Regular",
     fontSize,
+  },
+  link: {
+    color: "#0247fe",
+    textDecorationLine: "underline",
   },
 });

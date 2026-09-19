@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text } from "react-native";
 import { useCallback, useContext, useMemo } from "react";
 
-import InfoLine from "./InfoLine";
+import { InfoLineLink, InfoLineText } from "./InfoLine";
 import AppContext from "../AppContext";
 
 export default function Event({ time, data }) {
@@ -14,8 +14,19 @@ export default function Event({ time, data }) {
   );
   const getLine = useCallback(
     ([key, name]) => {
+      if (key === "link" || key === "map") {
+        return (
+          <InfoLineLink
+            name={name}
+            anchor={data[key].anchor}
+            link={data[key].link}
+            tagColor={tagColor}
+            key={key}
+          />
+        );
+      }
       const value = key === "time" ? time.replace("-", " - ") : data[key];
-      return <InfoLine name={name} value={value} key={key} tagColor={tagColor} />;
+      return <InfoLineText name={name} text={value} tagColor={tagColor} key={key} />;
     },
     [tagColor],
   );
