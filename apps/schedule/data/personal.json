@@ -11,7 +11,10 @@
       "14:00": { "content": "Code trên bkdnoj.com" },
       "16:30": { "content": "Chạy bộ" }
     },
-    "cn": { "08:00-09:00": { "content": "Ôn tiếng Anh đầu vào" } }
+    "cn": {
+      "08:00-09:00": { "content": "Ôn tiếng Anh đầu vào" },
+      "14:00-15:00": { "content": "Ôn tiếng Anh đầu vào" }
+    }
   },
   "2026-09-19": {
     "17:30": { "content": "Điểm danh lớp - BK Start", "place": "Trước tòa C5" },
