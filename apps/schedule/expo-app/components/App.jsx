@@ -11,7 +11,7 @@ import { useCallback, useMemo, useState } from "react";
 
 import AppContext from "./AppContext";
 import getSchedule from "../hooks/get-schedule";
-// import syncScheduleNotifications from "../utils/schedule-notifications";
+import syncScheduleNotifications from "../utils/schedule-notifications";
 import generateScheduleBlocks from "../hooks/generate-schedule-blocks";
 import getEventInformationConfig from "../hooks/get-event-information-config";
 import getEventTagsConfig from "../hooks/get-event-tags-config";
@@ -39,7 +39,7 @@ export default function App() {
     [eventInformationConfig, eventTagsConfig],
   );
 
-  // syncScheduleNotifications(schedule, eventTagsConfig);
+  syncScheduleNotifications(schedule, eventTagsConfig);
 
   const [refreshing, setRefreshing] = useState(false);
   const onRefresh = useCallback(async () => {
