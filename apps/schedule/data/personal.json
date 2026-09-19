@@ -12,7 +12,7 @@
       "16:30": { "content": "Chạy bộ" }
     },
     "cn": {
-      "07:50": { "content": "Ôn ICPC", "place": "MSTEAM" },
+      "07:50": { "content": "Ôn ICPC", "place": "MSTEAM", "tag": "dut" },
       "14:00-15:00": { "content": "Ôn tiếng Anh đầu vào" }
     }
   },
