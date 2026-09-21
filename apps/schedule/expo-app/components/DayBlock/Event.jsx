@@ -18,8 +18,8 @@ export default function Event({ time, data }) {
         return (
           <InfoLineLink
             name={name}
-            anchor={data[key].anchor}
-            link={data[key].link}
+            anchor={data[key][0]}
+            link={data[key][1]}
             tagColor={tagColor}
             key={key}
           />
