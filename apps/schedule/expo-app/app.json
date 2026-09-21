@@ -15,7 +15,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["expo-font"],
+    "plugins": ["expo-font", ["expo-notifications", { "sounds": ["./assets/notification.wav"] }]],
     "extra": {
       "eas": {
         "projectId": "4c43da24-fbf8-4841-ae31-0a45ee2f7957"
