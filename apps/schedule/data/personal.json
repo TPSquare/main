@@ -8,12 +8,13 @@
     "4": { "08:00-09:00": { "content": "Ôn tiếng Anh đầu vào" } },
     "5": { "08:00-09:00": { "content": "Ôn tiếng Anh đầu vào" } },
     "6": {
-      "14:00": { "content": "Code trên bkdnoj.com" },
+      "14:00": { "content": "Luyện code" },
       "16:30": { "content": "Chạy bộ" }
     },
     "cn": {
       "07:50": { "content": "Ôn ICPC", "place": "MSTEAM", "tag": "dut" },
-      "14:00-15:00": { "content": "Ôn tiếng Anh đầu vào" }
+      "14:00-16:00": { "content": "Ôn tiếng Anh đầu vào" },
+      "19:00-20:00": { "content": "Luyện code" }
     }
   },
   "2026-09-23": { "17:30-19:00": { "content": "Sinh hoạt chủ nhiệm", "place": "E2.105" } },

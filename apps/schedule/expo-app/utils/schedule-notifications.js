@@ -69,8 +69,8 @@ function getNotifications(schedule, tagsConfig) {
     if (!bIsDate) return 1;
     return a.trigger.date.getTime() - b.trigger.date.getTime();
   });
-  if (notifications[49])
-    notifications[49].content.body += "\nMở ứng dụng để cập nhật các thông báo mới";
+  notifications[Math.min(49, notifications.length - 1)].content.body +=
+    "\nMở ứng dụng để cập nhật các thông báo mới";
   return notifications.slice(0, 50);
 }
 
