@@ -75,8 +75,7 @@ function getNotifications(schedule, tagsConfig) {
 }
 
 async function sendNotifications(notifications) {
-  for (const notification of notifications)
-    await Notifications.scheduleNotificationAsync(notification);
+  await Promise.all(notifications.map((e) => Notifications.scheduleNotificationAsync(e)));
 }
 
 const setNotificationChannelAsync = async () => {
