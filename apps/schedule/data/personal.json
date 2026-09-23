@@ -2,22 +2,24 @@
   "frequent": {
     "2": {
       "14:00-15:00": { "content": "Ôn tiếng Anh đầu vào" },
-      "16:30": { "content": "Chạy bộ" }
+      "16:30": { "content": "Chạy bộ" },
+      "19:00-20:00": { "content": "Luyện code" }
     },
     "3": { "19:00-20:00": { "content": "Ôn tiếng Anh đầu vào" } },
-    "4": { "08:00-09:00": { "content": "Ôn tiếng Anh đầu vào" } },
-    "5": { "08:00-09:00": { "content": "Ôn tiếng Anh đầu vào" } },
+    "4": { "19:00-20:00": { "content": "Ôn tiếng Anh đầu vào" } },
+    "5": { "19:00-20:00": { "content": "Ôn tiếng Anh đầu vào" } },
     "6": {
       "14:00": { "content": "Luyện code" },
-      "16:30": { "content": "Chạy bộ" }
+      "16:30": { "content": "Chạy bộ" },
+      "19:00-20:00": { "content": "Ôn tiếng Anh đầu vào" }
     },
+    "7": { "19:00-20:00": { "content": "Ôn tiếng Anh đầu vào" } },
     "cn": {
       "07:50": { "content": "Train ICPC", "place": "C1.104", "tag": "dut" },
       "14:00-16:00": { "content": "Ôn tiếng Anh đầu vào" },
       "19:00-20:00": { "content": "Luyện code" }
     }
   },
-  "2026-09-23": { "17:30-19:00": { "content": "Sinh hoạt chủ nhiệm", "place": "E2.105" } },
   "2026-09-24": { "15:30": { "content": "Phản hồi vắng SHCD", "place": "Phòng S06.08" } },
   "2026-09-25": {
     "18:00": { "content": "Họp mặt, gặp chú Sơn TSNT", "note": "Chưa chốt thời gian" }
