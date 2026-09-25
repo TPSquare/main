@@ -37,8 +37,12 @@
       "link": [
         "facebook.com/...",
         "https://www.facebook.com/photo?fbid=1146036634421412&set=gm.2309546633131637&idorvanity=2309035499849417"
-      ]
+      ],
+      "tag": "deadline"
     }
+  },
+  "2026-09-27": {
+    "16:30": { "content": "Chạy bộ", "tag": "default" }
   },
   "2026-10-04": {
     "07:00-10:45": {
