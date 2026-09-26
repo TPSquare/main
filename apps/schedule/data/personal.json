@@ -24,22 +24,14 @@
     "20:00-22:00": {
       "content": "Code Tour 2026 - Warm-up Code Challenge",
       "link": ["https://codetour.org", "https://codetour.org/contest/public"]
-    },
-    "13:30": {
-      "content": "Task 2 - LCĐ",
-      "link": [
-        "facebook.com/...",
-        "https://www.facebook.com/photo?fbid=1146036634421412&set=gm.2309546633131637&idorvanity=2309035499849417"
-      ],
-      "tag": "deadline"
-    },
-    "18:00": { "content": "Nộp lại BT chương 1 trên LMS" }
+    }
   },
   "2026-09-27": {
     "16:30": { "content": "Chạy bộ", "tag": "default" }
   },
   "2026-10-02": {
-    "15:00": { "content": "Nộp BT chương 2 trên LMS" }
+    "15:00": { "content": "Nộp BT chương 2 trên LMS", "tag": "deadline" },
+    "23:00": { "content": "Nộp BT Nhập môn ngành", "tag": "deadline" }
   },
   "2026-10-04": {
     "07:00-10:45": {
