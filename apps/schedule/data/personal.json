@@ -20,13 +20,6 @@
       "19:00-20:00": { "content": "Luyện code" }
     }
   },
-  "2026-09-25": {
-    "19:00": {
-      "content": "Họp mặt, nhậu, gặp chú Sơn TSNT",
-      "map": ["78 Phan Văn Trị, Cẩm Lệ", "https://maps.app.goo.gl/8E3aXuJZgoVu6hcM7"]
-    },
-    "21:35": { "content": "DIV 2 - Codeforces" }
-  },
   "2026-09-26": {
     "20:00-22:00": {
       "content": "Code Tour 2026 - Warm-up Code Challenge",
@@ -39,10 +32,14 @@
         "https://www.facebook.com/photo?fbid=1146036634421412&set=gm.2309546633131637&idorvanity=2309035499849417"
       ],
       "tag": "deadline"
-    }
+    },
+    "18:00": { "content": "Nộp lại BT chương 1 trên LMS" }
   },
   "2026-09-27": {
     "16:30": { "content": "Chạy bộ", "tag": "default" }
+  },
+  "2026-10-02": {
+    "15:00": { "content": "Nộp BT chương 2 trên LMS" }
   },
   "2026-10-04": {
     "07:00-10:45": {
