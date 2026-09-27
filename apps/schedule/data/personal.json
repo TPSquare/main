@@ -20,18 +20,12 @@
       "19:00-20:00": { "content": "Luyện code" }
     }
   },
-  "2026-09-26": {
-    "20:00-22:00": {
-      "content": "Code Tour 2026 - Warm-up Code Challenge",
-      "link": ["https://codetour.org", "https://codetour.org/contest/public"]
-    }
-  },
-  "2026-09-27": {
-    "16:30": { "content": "Chạy bộ", "tag": "default" }
-  },
   "2026-10-02": {
     "15:00": { "content": "Nộp BT chương 2 trên LMS", "tag": "deadline" },
     "23:00": { "content": "Nộp BT Nhập môn ngành", "tag": "deadline" }
+  },
+  "2026-10-03": {
+    "20:00-22:00": { "content": "Code Challenge #1" }
   },
   "2026-10-04": {
     "07:00-10:45": {
@@ -40,6 +34,9 @@
       "note": "CCCD, bút chì 2B, bút mực, tẩy"
     },
     "13:30-19:30": { "content": "Hội đón TSV - Ban nội dung LCĐ", "place": "Khuôn viên trường" }
+  },
+  "2026-10-10": {
+    "20:00-22:00": { "content": "Code Challenge #2" }
   },
   "2026-10-18": {
     "13:45": {
