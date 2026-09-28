@@ -2,8 +2,6 @@ import * as Notifications from "expo-notifications";
 import { useEffect } from "react";
 import { BackHandler, Platform } from "react-native";
 
-import getNotificationTrigger from "./get-notification-trigger";
-
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldShowBanner: true,
@@ -21,6 +19,12 @@ async function requestPermissions() {
 function getNotifications(schedule, tagsConfig) {
   const DATE_TYPE = Notifications.SchedulableTriggerInputTypes.DATE;
   const INTERVAL_TYPE = Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL;
+  const getNotificationTrigger = (date) => {
+    return date
+      ? { type: DATE_TYPE, date, channelId: "notification" }
+      : { type: INTERVAL_TYPE, seconds: 1, channelId: "notification" };
+  };
+
   const notifications = [];
   for (const dateKey in schedule) {
     for (const time in schedule[dateKey]) {
