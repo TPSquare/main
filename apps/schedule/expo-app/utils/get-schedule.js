@@ -1,5 +1,6 @@
 import databaseUrl from "../configs/database-url";
 import fetchJSON from "../utils/fetch-json";
+import getKeyFromDate from "./get-key-from-date";
 
 const getDayRange = (last) => {
   const range = Object.fromEntries([1, 2, 3, 4, 5, 6, 7].map((e) => [e, ["", ""]]));
@@ -10,11 +11,11 @@ const getDayRange = (last) => {
   for (let i = 0; i < 7; i++) {
     const startDate = new Date(nowDate);
     startDate.setDate(startDate.getDate() + i);
-    range[startDate.getDay() + 1][0] = startDate.toISOString().slice(0, 10);
+    range[startDate.getDay() + 1][0] = getKeyFromDate(startDate);
 
     const endDate = new Date(lastDate);
     endDate.setDate(endDate.getDate() - i);
-    range[endDate.getDay() + 1][1] = endDate.toISOString().slice(0, 10);
+    range[endDate.getDay() + 1][1] = getKeyFromDate(endDate);
   }
   for (const day in range) if (range[day][1] < range[day][0]) range[day][1] = range[day][0];
 
@@ -24,7 +25,7 @@ const getDayRange = (last) => {
 const getSchedule = async () => {
   const frequentsData = [];
   const schedule = {};
-  let lastDate = new Date().toISOString().slice(0, 10);
+  let lastDate = getKeyFromDate(new Date());
 
   const dataListAPI = `${databaseUrl}/configs/data-list.json`;
   const dataList = await fetchJSON(dataListAPI);
@@ -55,9 +56,9 @@ const getSchedule = async () => {
       if (!frequent[day]) frequent[day] = {};
       Object.assign(frequent[day], frequentData[day]);
     }
-  if (frequent["cn"] && !frequent["1"]) frequent["1"] = {};
   if (frequent["cn"]) {
-    frequent["1"] = frequent["cn"];
+    if (!frequent["1"]) frequent["1"] = {};
+    Object.assign(frequent["1"], frequent["cn"]);
     delete frequent["cn"];
   }
 
@@ -66,7 +67,7 @@ const getSchedule = async () => {
     const currentDate = new Date(dayRange[day][0]);
     let currentDateKey;
     do {
-      currentDateKey = currentDate.toISOString().slice(0, 10);
+      currentDateKey = getKeyFromDate(currentDate);
       if (!schedule[currentDateKey]) schedule[currentDateKey] = {};
       Object.assign(schedule[currentDateKey], frequent[day]);
       currentDate.setDate(currentDate.getDate() + 7);
