@@ -2,6 +2,8 @@ import * as Notifications from "expo-notifications";
 import { useEffect } from "react";
 import { BackHandler, Platform } from "react-native";
 
+import getNotificationTrigger from "./get-notification-trigger";
+
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldShowBanner: true,
@@ -34,9 +36,7 @@ function getNotifications(schedule, tagsConfig) {
             body: `Thời gian ${timeText}${placeText}${noteText}`,
             sound: "notification.wav",
           },
-          trigger: date
-            ? { type: DATE_TYPE, date, channelId: "notification" }
-            : { type: INTERVAL_TYPE, seconds: 1, channelId: "notification" },
+          trigger: getNotificationTrigger(date),
         });
 
       const currentDate = new Date(`${dateKey}T${time.split("-")[0]}`);
@@ -69,9 +69,18 @@ function getNotifications(schedule, tagsConfig) {
     if (!bIsDate) return 1;
     return a.trigger.date.getTime() - b.trigger.date.getTime();
   });
-  notifications[Math.min(49, notifications.length - 1)].content.body +=
-    "\nMở ứng dụng để cập nhật các thông báo mới";
-  return notifications.slice(0, 50);
+  notifications.splice(60, notifications.length - 60);
+
+  const lastNotiDate = notifications[notifications.length - 1].trigger.date;
+  if (lastNotiDate) {
+    const emptyNotiDate = new Date(lastNotiDate);
+    emptyNotiDate.setMinutes(lastNotiDate.getMinutes() + 1);
+    notifications.push({
+      content: { title: "Mở ứng dụng để cập nhật các thông báo mới!" },
+      trigger: getNotificationTrigger(emptyNotiDate),
+    });
+  }
+  return notifications;
 }
 
 async function sendNotifications(notifications) {
