@@ -1,31 +1,44 @@
 {
   "frequent": {
-    "2": {
-      "14:00-15:00": { "content": "Ôn tiếng Anh đầu vào" },
-      "16:30": { "content": "Chạy bộ" },
-      "19:00-20:00": { "content": "Luyện code" }
-    },
-    "3": { "19:00-20:00": { "content": "Ôn tiếng Anh đầu vào" } },
-    "4": { "19:00-20:00": { "content": "Ôn tiếng Anh đầu vào" } },
-    "5": { "19:00-20:00": { "content": "Ôn tiếng Anh đầu vào" } },
-    "6": {
-      "14:00": { "content": "Luyện code" },
-      "16:30": { "content": "Chạy bộ" },
-      "19:00-20:00": { "content": "Ôn tiếng Anh đầu vào" }
-    },
-    "7": { "19:00-20:00": { "content": "Ôn tiếng Anh đầu vào" } },
-    "cn": {
-      "07:50": { "content": "Train ICPC", "place": "C1.104", "tag": "dut" },
-      "14:00-16:00": { "content": "Ôn tiếng Anh đầu vào" },
-      "19:00-20:00": { "content": "Luyện code" }
-    }
+    "2": {},
+    "3": {},
+    "4": {},
+    "5": {},
+    "6": {},
+    "7": {},
+    "cn": { "07:50-12:00": { "content": "Ôn luyện ICPC", "place": "C1.104", "tag": "dut" } }
+  },
+  "2026-09-29": {
+    "15:30-16:30": { "content": "Ôn tiếng Anh đầu vào" },
+    "17:30-18:00": { "content": "Ôn tiếng Anh đầu vào" },
+    "19:00-20:00": { "content": "Ôn tiếng Anh đầu vào" },
+    "20:30": { "content": "Làm karaoke" }
+  },
+  "2026-09-30": {
+    "07:00": { "content": "Deadline" },
+    "16:30": { "content": "Chạy bộ" },
+    "20:30": { "content": "Làm karaoke" }
+  },
+  "2026-10-01": {
+    "07:00-08:00": { "content": "Ôn tiếng Anh đầu vào" },
+    "08:30-09:30": { "content": "Ôn tiếng Anh đầu vào" },
+    "10:00-10:30": { "content": "Ôn tiếng Anh đầu vào" },
+    "16:00": { "content": "Chạy bộ" },
+    "19:00-20:00": { "content": "Ôn tiếng Anh đầu vào" },
+    "20:30": { "content": "Làm karaoke" }
   },
   "2026-10-02": {
     "15:00": { "content": "Nộp BT chương 2 trên LMS", "tag": "deadline" },
-    "23:00": { "content": "Nộp BT Nhập môn ngành", "tag": "deadline" }
+    "23:00": { "content": "Nộp BT Nhập môn ngành", "tag": "deadline" },
+    "17:00": { "content": "Luyện code" },
+    "19:00-20:00": { "content": "Ôn tiếng Anh đầu vào" },
+    "20:30": { "content": "Làm karaoke" }
   },
   "2026-10-03": {
-    "20:00-22:00": { "content": "Code Challenge #1" }
+    "20:00-22:00": { "content": "Code Challenge #1" },
+    "10:30-11:30": { "content": "Ôn tiếng Anh đầu vào" },
+    "16:00-17:00": { "content": "Ôn tiếng Anh đầu vào" },
+    "19:00-20:00": { "content": "Ôn tiếng Anh đầu vào" }
   },
   "2026-10-04": {
     "08:45-10:50": {
