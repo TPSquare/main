@@ -16,11 +16,12 @@
     "18:00": { "content": "Ăn tối", "tag": "default" }
   },
   "2026-09-30": {
-    "07:00": { "content": "Deadline", "tag": "default" },
+    "07:00": { "content": "Deadline bài tập", "tag": "default" },
     "16:30": { "content": "Chạy bộ", "tag": "default" },
     "20:30": { "content": "Làm karaoke", "tag": "default" },
     "11:30": { "content": "Ăn trưa", "tag": "default" },
     "12:00-13:00": { "content": "Ngủ trưa", "tag": "default" },
+    "13:30": { "content": "Deadline HSV", "tag": "default" },
     "18:00": { "content": "Ăn tối", "tag": "default" }
   },
   "2026-10-01": {
