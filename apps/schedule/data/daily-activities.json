@@ -1,39 +1,10 @@
 {
   "frequent": {
-    "2": {
-      "11:30": { "content": "Ăn trưa" },
-      "18:00": { "content": "Ăn tối" },
-      "22:30": { "content": "Ngủ" }
-    },
-    "3": {
-      "11:30": { "content": "Ăn trưa" },
-      "12:00-13:00": { "content": "Ngủ trưa" },
-      "18:00": { "content": "Ăn tối" },
-      "22:30": { "content": "Ngủ" }
-    },
-    "4": {
-      "11:30": { "content": "Ăn trưa" },
-      "12:00-13:00": { "content": "Ngủ trưa" },
-      "18:00": { "content": "Ăn tối" },
-      "22:30": { "content": "Ngủ" }
-    },
-    "5": {
-      "11:30": { "content": "Ăn trưa" },
-      "18:00": { "content": "Ăn tối" },
-      "22:30": { "content": "Ngủ" }
-    },
-    "6": {
-      "11:30": { "content": "Ăn trưa" },
-      "18:00": { "content": "Ăn tối" },
-      "22:30": { "content": "Ngủ" }
-    },
-    "7": {
-      "11:30": { "content": "Ăn trưa" },
-      "18:00": { "content": "Ăn tối" }
-    },
-    "cn": {
-      "18:00": { "content": "Ăn tối" },
-      "22:30": { "content": "Ngủ" }
-    }
+    "2": { "22:30": { "content": "Ngủ" } },
+    "3": { "22:30": { "content": "Ngủ" } },
+    "4": { "22:30": { "content": "Ngủ" } },
+    "5": { "22:30": { "content": "Ngủ" } },
+    "6": { "22:30": { "content": "Ngủ" } },
+    "cn": { "22:30": { "content": "Ngủ" } }
   }
 }
