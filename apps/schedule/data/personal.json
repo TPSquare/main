@@ -19,7 +19,8 @@
     "11:30": { "content": "Ăn trưa", "tag": "default" },
     "12:00-13:00": { "content": "Ngủ trưa", "tag": "default" },
     "13:30": { "content": "Deadline HSV", "tag": "default" },
-    "17:30": { "content": "Họp toàn BTC ngày hội chào đón TSV", "place": "C128" }
+    "17:30": { "content": "Họp toàn BTC ngày hội chào đón TSV", "place": "C128" },
+    "21:30": { "content": "Training team Content LCĐ", "place": "Meet" }
   },
   "2026-10-01": {
     "07:00-08:00": { "content": "Ôn tiếng Anh đầu vào", "tag": "default" },
