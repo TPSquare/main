@@ -58,7 +58,7 @@
       "place": "F210 - Ca 2",
       "note": "CCCD, bút chì 2B, bút mực, tẩy\nSBD: 001993"
     },
-    "13:30-19:30": { "content": "Hội đón TSV - Ban nội dung LCĐ", "place": "Khuôn viên trường" },
+    "13:00-19:30": { "content": "Hội đón TSV - Ban nội dung LCĐ", "place": "Khuôn viên trường" },
     "11:30": { "content": "Ăn trưa", "tag": "default" },
     "12:00-13:00": { "content": "Ngủ trưa", "tag": "default" }
   },

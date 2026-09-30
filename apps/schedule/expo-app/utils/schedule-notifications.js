@@ -49,9 +49,13 @@ function getNotifications(schedule, tagsConfig) {
       let pushNow = false;
       for (const adretime of tagsConfig[schedule[dateKey][time].tag].adretimes) {
         const adredate = new Date(currentDate);
-        adredate.setHours(adredate.getHours() - adretime);
+        adredate.setTime(adredate.getTime() - adretime * 3600000);
         if (adredate.getTime() <= Date.now()) pushNow = true;
-        else pushNotification(`Còn ${adretime} giờ`, adredate);
+        else {
+          const time = adretime * (adretime < 1 ? 60 : 1);
+          const unit = adretime < 1 ? "phút" : "giờ";
+          pushNotification(`Còn ${time} ${unit}`, adredate);
+        }
       }
       if (pushNow) {
         const delta = currentDate.getTime() - Date.now();
@@ -62,7 +66,8 @@ function getNotifications(schedule, tagsConfig) {
           pushNotification(`Còn ${minutes} phút`);
         }
       }
-      pushNotification("Ngay lúc này", currentDate);
+      currentDate.setMinutes(currentDate.getMinutes() - 5);
+      pushNotification("Còn 5 phút", currentDate);
     }
   }
   notifications.sort((a, b) => {
