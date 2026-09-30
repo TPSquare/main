@@ -52,7 +52,6 @@ const getSchedule = async () => {
     for (const day in frequentData) {
       for (const time in frequentData[day])
         if (!frequentData[day][time].tag) frequentData[day][time].tag = "default";
-
       if (!frequent[day]) frequent[day] = {};
       Object.assign(frequent[day], frequentData[day]);
     }
@@ -69,7 +68,8 @@ const getSchedule = async () => {
     do {
       currentDateKey = getKeyFromDate(currentDate);
       if (!schedule[currentDateKey]) schedule[currentDateKey] = {};
-      Object.assign(schedule[currentDateKey], frequent[day]);
+      for (const time in frequent[day])
+        schedule[currentDateKey][time] = schedule[currentDateKey][time] || frequent[day][time];
       currentDate.setDate(currentDate.getDate() + 7);
     } while (currentDateKey <= dayRange[day][1]);
   }

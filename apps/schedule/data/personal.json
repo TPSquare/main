@@ -23,7 +23,7 @@
       "content": "Họp toàn BTC ngày hội chào đón TSV",
       "place": "Văn phòng khoa - khu FAST, C3 tầng 2"
     },
-    "21:30": { "content": "Training team Content LCĐ", "place": "Meet" }
+    "21:30": { "content": "Training team Content LCĐ", "place": "Meet", "tag": "meet" }
   },
   "2026-10-01": {
     "07:00-08:00": { "content": "Ôn tiếng Anh đầu vào", "tag": "default" },
@@ -36,8 +36,6 @@
     "18:00": { "content": "Ăn tối", "tag": "default" }
   },
   "2026-10-02": {
-    "15:00": { "content": "Nộp BT chương 2 trên LMS", "tag": "deadline" },
-    "23:00": { "content": "Nộp BT Nhập môn ngành", "tag": "deadline" },
     "17:00": { "content": "Code", "tag": "default" },
     "19:00-20:00": { "content": "Ôn tiếng Anh đầu vào", "tag": "default" },
     "20:30": { "content": "Làm karaoke", "tag": "default" },
@@ -63,7 +61,7 @@
     "12:00-13:00": { "content": "Ngủ trưa", "tag": "default" }
   },
   "2026-10-07": {
-    "19:00": { "content": "Chương trình hội nhập TSV TSNT" }
+    "19:00": { "content": "Chương trình hội nhập TSV TSNT", "tag": "meet" }
   },
   "2026-10-10": {
     "20:00-22:00": { "content": "Code Challenge #2" }
