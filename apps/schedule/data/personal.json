@@ -8,23 +8,10 @@
     "7": {},
     "cn": { "07:50-12:00": { "content": "Ôn luyện ICPC", "place": "C1.104", "tag": "dut" } }
   },
-  "2026-10-01": {
-    "07:00-08:00": { "content": "Ôn tiếng Anh đầu vào", "tag": "default" },
-    "08:30-09:30": { "content": "Ôn tiếng Anh đầu vào", "tag": "default" },
-    "10:00-10:30": { "content": "Ôn tiếng Anh đầu vào", "tag": "default" },
-    "16:30": { "content": "Chạy bộ", "tag": "default" },
-    "19:00-20:00": { "content": "Ôn tiếng Anh đầu vào", "tag": "default" },
-    "20:30": { "content": "Làm karaoke", "tag": "default" },
-    "11:30": { "content": "Ăn trưa", "tag": "default" },
-    "17:30": { "content": "Ăn tối", "tag": "default" },
-    "18:00": { "content": "Họp team Design LCĐ", "tag": "meet" }
-  },
   "2026-10-02": {
-    "17:00": { "content": "Code", "tag": "default" },
-    "19:00-20:00": { "content": "Ôn tiếng Anh đầu vào", "tag": "default" },
     "20:30": { "content": "Làm karaoke", "tag": "default" },
-    "11:30": { "content": "Ăn trưa", "tag": "default" },
-    "18:00": { "content": "Ăn tối", "tag": "default" }
+    "18:00": { "content": "Ăn tối", "tag": "default" },
+    "21:00": { "content": "Họp ban nội dung", "tag": "meet" }
   },
   "2026-10-03": {
     "20:00-22:00": { "content": "Code Challenge #1" },
