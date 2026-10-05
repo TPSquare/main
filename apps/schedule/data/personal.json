@@ -9,11 +9,11 @@
     "23:00": { "content": "Ngủ" }
   },
   "frequent": {
-    "2": { "19:00": { "content": "Chạy bộ" } },
+    "2": { "17:00": { "content": "Chạy bộ" } },
     "3": {},
-    "4": { "19:00": { "content": "Chạy bộ" } },
+    "4": { "17:00": { "content": "Chạy bộ" } },
     "5": {},
-    "6": { "19:00": { "content": "Chạy bộ" } },
+    "6": { "17:00": { "content": "Chạy bộ" } },
     "7": {},
     "cn": { "07:50-12:00": { "content": "Ôn luyện ICPC", "place": "C1.104", "tag": "dut" } }
   },
