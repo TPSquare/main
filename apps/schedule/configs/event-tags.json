@@ -1,7 +1,7 @@
 {
   "default": { "color": "#000000", "adretimes": [] },
   "meet": { "color": "#efcc00", "adretimes": [1] },
-  "dut": { "color": "#00008b", "adretimes": [0.5, 1, 10] },
+  "dut": { "color": "#00008b", "adretimes": [0.4, 1, 10] },
   "special": { "color": "#e86100", "adretimes": [1, 12] },
   "deadline": { "color": "#ff0000 ", "adretimes": [1, 6, 24, 48, 72] }
 }
