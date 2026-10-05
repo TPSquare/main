@@ -24,6 +24,7 @@ const getDayRange = (last) => {
 
 const getSchedule = async () => {
   const frequentsData = [];
+  const alwaysData = {};
   const schedule = {};
   let lastDate = getKeyFromDate(new Date());
 
@@ -36,6 +37,10 @@ const getSchedule = async () => {
       frequentsData.push(data.frequent);
       delete data.frequent;
     }
+    if (data.always) {
+      Object.assign(alwaysData, data.always);
+      delete data.always;
+    }
     for (const dateKey in data) {
       if (dateKey > lastDate) lastDate = dateKey;
       if (!schedule[dateKey]) schedule[dateKey] = {};
@@ -46,6 +51,9 @@ const getSchedule = async () => {
       Object.assign(schedule[dateKey], data[dateKey]);
     }
   }
+
+  for (const time in alwaysData) if (!alwaysData[time].tag) alwaysData[time].tag = "default";
+  for (const dateKey in schedule) Object.assign(schedule[dateKey], alwaysData);
 
   const frequent = {};
   for (const frequentData of frequentsData)
