@@ -47,7 +47,6 @@ function getNotifications(schedule, tagsConfig) {
       if (currentDate.getTime() <= Date.now()) continue;
 
       let pushNow = false;
-      tagsConfig[schedule[dateKey][time].tag].adretimes.push(0.1);
       for (const adretime of tagsConfig[schedule[dateKey][time].tag].adretimes) {
         const adredate = new Date(currentDate);
         adredate.setTime(adredate.getTime() - adretime * 3600000);
