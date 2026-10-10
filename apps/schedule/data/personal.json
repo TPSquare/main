@@ -26,6 +26,14 @@
   "2026-10-11": {
     "20:00": { "content": "Hạn nộp BT nhập môn CNS & TTNT", "tag": "deadline" }
   },
+  "2026-10-15": {
+    "07:30": {
+      "content": "Lấy thẻ sinh viên",
+      "place": "Sảnh tự học khu A",
+      "tag": "dut",
+      "note": "CCCD"
+    }
+  },
   "2026-10-17": {
     "13:30": {
       "content": "Tuyên truyền về ATGT",
