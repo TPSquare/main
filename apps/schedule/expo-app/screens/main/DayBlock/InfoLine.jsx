@@ -1,6 +1,6 @@
 import { Linking, StyleSheet, Text, View } from "react-native";
 
-function InfoLine({ children, name, tagColor }) {
+function InfoLineWrapper({ children, name, tagColor }) {
   return (
     <View style={styles.wrapper}>
       <Text style={{ ...styles.name, color: tagColor }}>{name}: </Text>
@@ -11,19 +11,19 @@ function InfoLine({ children, name, tagColor }) {
 
 export function InfoLineText({ name, text, tagColor }) {
   return (
-    <InfoLine name={name} tagColor={tagColor}>
+    <InfoLineWrapper name={name} tagColor={tagColor}>
       <Text style={styles.text}>{text}</Text>
-    </InfoLine>
+    </InfoLineWrapper>
   );
 }
 
 export function InfoLineLink({ name, link, anchor, tagColor }) {
   return (
-    <InfoLine name={name} tagColor={tagColor}>
+    <InfoLineWrapper name={name} tagColor={tagColor}>
       <Text style={{ ...styles.text, ...styles.link }} onPress={() => Linking.openURL(link)}>
         {anchor}
       </Text>
-    </InfoLine>
+    </InfoLineWrapper>
   );
 }
 

@@ -3,5 +3,5 @@
   "meet": { "color": "#ffc40c", "adretimes": [0.25, 1] },
   "dut": { "color": "#00008b", "adretimes": [0.4, 1, 10] },
   "special": { "color": "#e86100", "adretimes": [1, 12] },
-  "deadline": { "color": "#ff0000 ", "adretimes": [1, 6, 24, 48, 72] }
+  "deadline": { "color": "#ff0000", "adretimes": [1, 6, 24, 48, 72] }
 }

@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import Event from "./Event";
 
-import dayNames from "../../configs/day-names";
+import dayNames from "../../../configs/day-names";
 
 export default function DayBlock({ dateKey, dateData }) {
   const date = dateKey.split("-").reverse().join("/");

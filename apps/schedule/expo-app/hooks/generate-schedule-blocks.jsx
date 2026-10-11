@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import DayBlock from "../components/DayBlock";
+import DayBlock from "../screens/main/DayBlock";
 
 export default function (schedule) {
   return useMemo(

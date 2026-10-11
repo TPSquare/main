@@ -5,15 +5,13 @@
     "18:00": { "content": "Ăn tối" },
     "23:00": { "content": "Ngủ" }
   },
-  "frequent": {
-    "cn": { "07:50-12:00": { "content": "Ôn luyện ICPC", "place": "C1.104", "tag": "dut" } }
-  },
+  "frequent": {},
   "2026-10-10": {
     "21:00": { "content": "Họp FITEC" }
   },
   "2026-10-11": {
     "20:00": { "content": "Hạn nộp BT nhập môn CNS & TTNT", "tag": "deadline" },
-    "18:00": { "content": "Họp tổng kết sự kiện", "place": "C128", "tag": "dut" }
+    "18:00": { "content": "Họp tổng kết sự kiện chào TSV", "place": "C128", "tag": "dut" }
   },
   "2026-10-15": {
     "07:30": {

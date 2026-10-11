@@ -6,7 +6,8 @@ import AppContext from "../AppContext";
 
 export default function Event({ time, data }) {
   const { eventTagsConfig, eventInformationConfig } = useContext(AppContext);
-  const tagColor = eventTagsConfig[data.tag].color;
+
+  const tagColor = useMemo(() => eventTagsConfig[data.tag].color, []);
 
   const validInfo = useMemo(
     () => Object.entries(eventInformationConfig).filter(([key]) => data[key] || key === "time"),

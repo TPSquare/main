@@ -53,7 +53,10 @@ const getSchedule = async () => {
   }
 
   for (const time in alwaysData) if (!alwaysData[time].tag) alwaysData[time].tag = "default";
-  for (const dateKey in schedule) Object.assign(schedule[dateKey], alwaysData);
+  for (const dateKey in schedule) {
+    for (const time in alwaysData)
+      schedule[dateKey][time] = schedule[dateKey][time] || alwaysData[time];
+  }
 
   const frequent = {};
   for (const frequentData of frequentsData)
