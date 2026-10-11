@@ -12,7 +12,8 @@
     "21:00": { "content": "Họp FITEC" }
   },
   "2026-10-11": {
-    "20:00": { "content": "Hạn nộp BT nhập môn CNS & TTNT", "tag": "deadline" }
+    "20:00": { "content": "Hạn nộp BT nhập môn CNS & TTNT", "tag": "deadline" },
+    "18:00": { "content": "Họp tổng kết sự kiện", "place": "C128", "tag": "dut" }
   },
   "2026-10-15": {
     "07:30": {
