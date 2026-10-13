@@ -6,12 +6,12 @@
     "23:00": { "content": "Ngủ" }
   },
   "frequent": {},
-  "2026-10-10": {
-    "21:00": { "content": "Họp FITEC" }
-  },
-  "2026-10-11": {
-    "20:00": { "content": "Hạn nộp BT nhập môn CNS & TTNT", "tag": "deadline" },
-    "18:00": { "content": "Họp tổng kết sự kiện chào TSV", "place": "C128", "tag": "dut" }
+  "2026-10-14": {
+    "16:30": {
+      "content": "Lấy áo HSV",
+      "place": "Sân Pickleball & Football Liên Chiểu Sports Center | K151 Âu Cơ",
+      "note": "0813768595"
+    }
   },
   "2026-10-15": {
     "07:30": {
