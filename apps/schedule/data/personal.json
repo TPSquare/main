@@ -11,7 +11,8 @@
       "content": "Lấy áo HSV",
       "place": "Sân Pickleball & Football Liên Chiểu Sports Center | K151 Âu Cơ",
       "note": "0813768595"
-    }
+    },
+    "21:00": { "content": "Họp team 1" }
   },
   "2026-10-15": {
     "07:30": {
@@ -19,6 +20,13 @@
       "place": "Sảnh tự học khu A",
       "tag": "dut",
       "note": "CCCD"
+    }
+  },
+  "2026-10-16": {
+    "": {
+      "content": "Thi kết thúc HP QS",
+      "place": "P27 - F107",
+      "note": "Số báo danh: 85685\nBàn thứ 10 dãy đầu tiên bên phải"
     }
   },
   "2026-10-17": {
