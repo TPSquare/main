@@ -12,6 +12,10 @@
       "place": "Sân Pickleball & Football Liên Chiểu Sports Center | K151 Âu Cơ",
       "note": "0813768595"
     },
+    "18:00": {
+      "content": "Đến trọ anh Hoàng đi ăn",
+      "place": "Zen Living Apartment | 856/37 Tôn Đức Thắng"
+    },
     "21:00": { "content": "Họp team 1" }
   },
   "2026-10-15": {
@@ -26,7 +30,8 @@
     "": {
       "content": "Thi kết thúc HP QS",
       "place": "P27 - F107",
-      "note": "Số báo danh: 85685\nBàn thứ 10 dãy đầu tiên bên phải"
+      "note": "Số báo danh: 85685\nBàn thứ 10 dãy đầu tiên bên phải",
+      "tag": "dut"
     }
   },
   "2026-10-17": {
