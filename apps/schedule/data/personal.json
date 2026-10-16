@@ -6,29 +6,16 @@
     "23:00": { "content": "Ngủ" }
   },
   "frequent": {},
-  "2026-10-15": {
-    "15:30": {
-      "content": "Lấy thẻ sinh viên",
-      "place": "Sảnh tự học khu A",
-      "tag": "dut",
-      "note": "CCCD"
-    },
-    "19:30": { "content": "Họp nhận xét LCĐ", "tag": "meet" }
-  },
-  "2026-10-16": {
-    "08:45": {
-      "content": "Thi kết thúc HP QS",
-      "place": "P27 - F107",
-      "note": "Số báo danh: 85685\nBàn thứ 10 dãy đầu tiên bên phải",
-      "tag": "dut"
-    }
-  },
   "2026-10-17": {
     "13:30": {
       "content": "Tuyên truyền về ATGT",
       "place": "Hội trường F",
       "note": "Áo khoa\nCó điểm PVCĐ",
       "tag": "dut"
+    },
+    "18:50": {
+      "content": "Họp Team 1 lần 2",
+      "place": "T&K Coffee | 177 Hồ Tùng Mậu"
     }
   },
   "2026-10-18": {
