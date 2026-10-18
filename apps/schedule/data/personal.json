@@ -1,33 +1,15 @@
 {
   "always": {
-    "11:30": { "content": "Ăn trưa" },
-    "12:00-13:00": { "content": "Ngủ trưa" },
-    "18:00": { "content": "Ăn tối" },
-    "23:00": { "content": "Ngủ" }
+    "05:10-05:25": { "content": "Thể dục" },
+    "05:25-05:40": { "content": "Ăn sáng" },
+    "06:20-06:30": { "content": "Kiểm tra nội vụ" },
+    "06:30-10:30": { "content": "Học" },
+    "10:45-11:10": { "content": "Ăn trưa" },
+    "13:05-13:15": { "content": "Kiểm tra nội vụ" },
+    "13:15-16:30": { "content": "Học" },
+    "17:20-17:40": { "content": "Ăn chiều" },
+    "18:45": { "content": "Sinh hoạt tối" },
+    "21:15": { "content": "Chuẩn bị ngủ" }
   },
-  "frequent": {},
-  "2026-10-17": {
-    "13:30": {
-      "content": "Tuyên truyền về ATGT",
-      "place": "Hội trường F",
-      "note": "Áo khoa\nCó điểm PVCĐ",
-      "tag": "dut"
-    },
-    "17:00": {
-      "content": "Nộp GTT Đảng",
-      "place": "42 Nguyễn Lương Bằng"
-    },
-    "18:50": {
-      "content": "Họp Team 1 lần 2",
-      "place": "T&K Coffee | 177 Hồ Tùng Mậu"
-    }
-  },
-  "2026-10-18": {
-    "13:45": {
-      "content": "Lên xe đi học QP",
-      "note": "Đợt 2, xe số 8",
-      "place": "Trung tâm thông tin và học liệu số",
-      "tag": "deadline"
-    }
-  }
+  "frequent": {}
 }
