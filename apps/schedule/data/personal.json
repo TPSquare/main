@@ -4,6 +4,7 @@
     "11:30": { "content": "Ăn" },
     "12:00-13:00": { "content": "Ngủ" },
     "18:00": { "content": "Ăn" },
+    "22:00": { "content": "Làm karaoke" },
     "23:00": { "content": "Ngủ" }
   },
   "frequent": {}
