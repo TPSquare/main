@@ -26,7 +26,7 @@ const getSchedule = async () => {
   const frequentsData = [];
   const alwaysData = {};
   const schedule = {};
-  let lastDate = getKeyFromDate(new Date());
+  let lastDateKey = getKeyFromDate(new Date());
 
   const dataListAPI = `${databaseUrl}/configs/data-list.json`;
   const dataList = await fetchJSON(dataListAPI);
@@ -42,7 +42,7 @@ const getSchedule = async () => {
       delete data.always;
     }
     for (const dateKey in data) {
-      if (dateKey > lastDate) lastDate = dateKey;
+      if (dateKey > lastDateKey) lastDateKey = dateKey;
       if (!schedule[dateKey]) schedule[dateKey] = {};
 
       for (const time in data[dateKey])
@@ -53,9 +53,14 @@ const getSchedule = async () => {
   }
 
   for (const time in alwaysData) if (!alwaysData[time].tag) alwaysData[time].tag = "default";
-  for (const dateKey in schedule) {
-    for (const time in alwaysData)
-      schedule[dateKey][time] = schedule[dateKey][time] || alwaysData[time];
+  const currentDate = new Date();
+  currentDate.setHours(0, 0, 0, 0);
+  const lastDate = new Date(lastDateKey);
+  while (currentDate.getTime() <= lastDate.getTime()) {
+    const key = getKeyFromDate(currentDate);
+    if (!schedule[key]) schedule[key] = {};
+    for (const time in alwaysData) schedule[key][time] = schedule[key][time] || alwaysData[time];
+    currentDate.setDate(currentDate.getDate() + 1);
   }
 
   const frequent = {};
@@ -72,7 +77,7 @@ const getSchedule = async () => {
     delete frequent["cn"];
   }
 
-  const dayRange = getDayRange(lastDate);
+  const dayRange = getDayRange(lastDateKey);
   for (const day in frequent) {
     const currentDate = new Date(dayRange[day][0]);
     let currentDateKey;
