@@ -7,5 +7,12 @@
     "22:00": { "content": "Làm karaoke" },
     "23:00": { "content": "Ngủ" }
   },
-  "frequent": {}
+  "frequent": {},
+  "2026-11-11": {
+    "17:30-19:00": {
+      "content": "Sinh hoạt chủ nhiệm lần 2",
+      "place": "H108",
+      "tag": "dut"
+    }
+  }
 }
