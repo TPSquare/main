@@ -9,7 +9,7 @@
   },
   "frequent": {},
   "2026-11-05": {
-    "08:00-09:50": {
+    "07:45-09:50": {
       "content": "Đại hội chi đoàn",
       "place": "F206",
       "tag": "dut"
@@ -20,6 +20,12 @@
       "content": "Sinh hoạt chủ nhiệm lần 2",
       "place": "H108",
       "tag": "dut"
+    }
+  },
+  "2026-11-07": {
+    "12:00": {
+      "content": "Viết bài FITEC",
+      "tag": "deadline"
     }
   }
 }
