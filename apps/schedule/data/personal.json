@@ -1,14 +1,6 @@
 {
-  "always": {
-    "05:45": { "content": "Dậy" },
-    "11:30": { "content": "Ăn" },
-    "12:00-13:00": { "content": "Ngủ" },
-    "18:00": { "content": "Ăn" },
-    "22:00": { "content": "Làm karaoke" },
-    "23:00": { "content": "Ngủ" }
-  },
+  "always": {},
   "frequent": {},
-  "2026-11-06": { "18:15": { "content": "Trả loa" } },
   "2026-11-11": {
     "17:30-19:00": {
       "content": "Sinh hoạt chủ nhiệm lần 2",
@@ -16,10 +8,17 @@
       "tag": "dut"
     }
   },
-  "2026-11-08": {
-    "08:30": {
-      "content": "Họp chi bộ",
-      "tag": "meet"
+  "2026-11-13": {
+    "12:30": {
+      "content": "Thi giữa kì Nhập môn ngành",
+      "place": "F301",
+      "tag": "dut",
+      "note": "Đem theo máy tính"
+    }
+  },
+  "2026-11-20": {
+    "20:00": {
+      "content": "Duyệt chương trình chào tân TSNT"
     }
   }
 }
