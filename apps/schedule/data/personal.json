@@ -1,23 +1,10 @@
 {
   "always": {},
   "frequent": {},
-  "2026-11-12": {
-    "20:00": {
-      "content": "Làm bài thi thử",
-      "tag": "remind"
-    }
-  },
-  "2026-11-13": {
-    "12:30": {
-      "content": "Thi giữa kì Nhập môn ngành",
-      "place": "F301",
-      "tag": "dut",
-      "note": "Đem theo máy tính"
-    },
-    "17:30": {
-      "content": "Họp chi bộ tháng 11",
-      "place": "Hội trường S02.01",
-      "tag": "dut"
+  "2026-11-15": {
+    "19:00-19:20": {
+      "content": "Họp LCĐ",
+      "tag": "meet"
     }
   },
   "2026-11-17": {

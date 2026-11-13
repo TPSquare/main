@@ -1,6 +1,6 @@
 import os
 
-FOLDER = "D:\\Downloads\\26T1 App TNVN"
+FOLDER = "D:\\Downloads\\26T1 Nộp sổ đoàn"
 
 NAMES_26T1 = [
     "Nguyễn Mai Gia Bảo",
@@ -57,12 +57,13 @@ def get_existing_names():
 existing = get_existing_names()
 
 remaining = [name for name in NAMES_26T1 if name not in existing]
-print("=== REMAINING ===")
+print()
 for name in remaining:
     print(name)
+print()
 
 unknown = [name for name in existing if name not in NAMES_26T1]
 if len(unknown) > 0:
-    print("\n=== UNKNOWN ===")
     for name in unknown:
-        print(name)
+        print(f"⚠ {name}")
+    print()
