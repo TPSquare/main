@@ -3,6 +3,10 @@
     "19:00-19:20": {
       "content": "Họp LCĐ",
       "tag": "meet"
+    },
+    "22:30": {
+      "content": "Ra nhà ga",
+      "tag": "default"
     }
   },
   "2026-11-16": {
