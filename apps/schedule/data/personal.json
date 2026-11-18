@@ -5,6 +5,11 @@
       "place": "C1.105",
       "tag": "dut"
     },
+    "13:15": {
+      "content": "Seminar",
+      "place": "S02.01",
+      "tag": "dut"
+    },
     "20:00": {
       "content": "Hủy ME10",
       "tag": "default"
