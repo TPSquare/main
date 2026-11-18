@@ -106,7 +106,9 @@ const sortSchedule = (schedule) => {
 
 const deletePastDate = (schedule) => {
   for (const dateKey in schedule) {
-    const lastTime = Object.keys(schedule[dateKey]).pop().split("-").pop();
+    const lastTimeKey = Object.keys(schedule[dateKey]).pop();
+    if (!lastTimeKey) continue;
+    const lastTime = lastTimeKey.split("-").pop();
     const date = new Date(`${dateKey}T${lastTime}`);
     if (date.getTime() < Date.now()) delete schedule[dateKey];
     else return;

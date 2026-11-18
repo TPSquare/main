@@ -1,6 +1,6 @@
 import os
 
-FOLDER = "D:\\Downloads\\26T1 Nộp sổ đoàn"
+FOLDER = "D:\\Downloads\\26T1 App TNVN"
 
 NAMES_26T1 = [
     "Nguyễn Mai Gia Bảo",

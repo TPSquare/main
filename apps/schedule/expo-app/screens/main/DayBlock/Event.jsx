@@ -35,18 +35,15 @@ export default function Event({ time, data }) {
 
   if (!tagColor) return <Text>Đang tải...</Text>;
   return (
-    <View style={{ ...styles.container, backgroundColor: tagColor }}>
-      <View style={styles.wrapper}>{infoLines}</View>
+    <View style={styles.container}>
+      <View style={[styles.line, { backgroundColor: tagColor }]}></View>
+      <View style={styles.content}>{infoLines}</View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { marginBlock: 20, borderRadius: 6 },
-  wrapper: {
-    marginLeft: 3,
-    paddingLeft: 8,
-    backgroundColor: "white",
-    borderRadius: 5,
-  },
+  container: { marginBlock: 20, borderRadius: 6, display: "flex", flexDirection: "row" },
+  line: { width: 3, borderRadius: 999, marginRight: 8 },
+  content: { flex: 1 },
 });

@@ -52,7 +52,7 @@ export default function App() {
   return (
     <ScrollView
       style={styles.container}
-      contentContainerStyle={{ alignItems: "center" }}
+      contentContainerStyle={styles.contentContainer}
       refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
     >
       <Text style={styles.title}>LỊCH TRÌNH</Text>
@@ -66,7 +66,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#F3F6FC",
-    paddingBlock: 50,
+  },
+  contentContainer: {
+    alignItems: "center",
+    paddingTop: 50,
+    paddingBottom: 200,
   },
   title: { fontSize: 40, fontFamily: "Roboto_700Bold" },
 });

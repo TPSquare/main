@@ -1,30 +1,8 @@
 {
-  "2026-11-15": {
-    "19:00-19:20": {
-      "content": "Họp LCĐ",
-      "tag": "meet"
-    },
-    "22:30": {
-      "content": "Ra nhà ga",
+  "2026-11-19": {
+    "20:00": {
+      "content": "Hủy ME10",
       "tag": "default"
-    }
-  },
-  "2026-11-16": {
-    "08:00": {
-      "content": "Nộp sổ đoàn",
-      "tag": "dut"
-    }
-  },
-  "2026-11-17": {
-    "07:45": {
-      "content": "Tham dự Seminar",
-      "tag": "dut",
-      "place": "Hội trường S02.01"
-    },
-    "12:35": {
-      "content": "Kiến tập FPT Software",
-      "tag": "dut",
-      "note": "Áo khoa"
     }
   },
   "2026-11-20": {

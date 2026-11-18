@@ -11,12 +11,25 @@
     },
     "android": {
       "package": "com.tpsquare.tpsschedule",
-      "permissions": ["SCHEDULE_EXACT_ALARM"]
+      "permissions": [
+        "SCHEDULE_EXACT_ALARM"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["expo-font", ["expo-notifications", { "sounds": ["./assets/notification.wav"] }]],
+    "plugins": [
+      "expo-font",
+      [
+        "expo-notifications",
+        {
+          "sounds": [
+            "./assets/notification.wav"
+          ]
+        }
+      ],
+      "expo-status-bar"
+    ],
     "extra": {
       "eas": {
         "projectId": "4c43da24-fbf8-4841-ae31-0a45ee2f7957"

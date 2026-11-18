@@ -3,7 +3,7 @@ import { Linking, StyleSheet, Text, View } from "react-native";
 function InfoLineWrapper({ children, name, tagColor }) {
   return (
     <View style={styles.wrapper}>
-      <Text style={{ ...styles.name, color: tagColor }}>{name}: </Text>
+      <Text style={[styles.name, { color: tagColor }]}>{name}: </Text>
       {children}
     </View>
   );
@@ -20,7 +20,7 @@ export function InfoLineText({ name, text, tagColor }) {
 export function InfoLineLink({ name, link, anchor, tagColor }) {
   return (
     <InfoLineWrapper name={name} tagColor={tagColor}>
-      <Text style={{ ...styles.text, ...styles.link }} onPress={() => Linking.openURL(link)}>
+      <Text style={[styles.text, styles.link]} onPress={() => Linking.openURL(link)}>
         {anchor}
       </Text>
     </InfoLineWrapper>
