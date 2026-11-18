@@ -1,5 +1,10 @@
 {
   "2026-11-19": {
+    "09:00": {
+      "content": "Làm báo tường",
+      "place": "C1.105",
+      "tag": "dut"
+    },
     "20:00": {
       "content": "Hủy ME10",
       "tag": "default"
