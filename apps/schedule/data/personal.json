@@ -16,12 +16,17 @@
     }
   },
   "2026-11-20": {
+    "08:00": {
+      "content": "Dự lễ kỷ niệm 20/11",
+      "place": "Hội trường F",
+      "tag": "dut"
+    },
     "20:00": {
       "content": "Duyệt chương trình chào tân TSNT"
     }
   },
   "2026-11-21": {
-    "06:00-23:00": {
+    "09:00-23:00": {
       "content": "Chương trình chào tân TSNT"
     }
   },
