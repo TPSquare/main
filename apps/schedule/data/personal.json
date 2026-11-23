@@ -1,11 +1,12 @@
 {
   "2026-11-24": {
-    "13:30": {
+    "08:00": {
       "content": "Đi chơi 24/11"
     },
-    "17:30": {
+    "17:00": {
       "content": "Họp BCH LCĐ",
-      "place": "C128",
+      "place": "Tầng 2",
+      "map": ["Trà sữa Cloudy", "https://maps.app.goo.gl/qQmms7jRmbzGnWQT6"],
       "tag": "dut"
     }
   },
