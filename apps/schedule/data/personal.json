@@ -1,16 +1,15 @@
 {
-  "2026-11-24": {
-    "08:00": {
-      "content": "Đi chơi 24/11"
-    },
-    "17:00": {
-      "content": "Họp BCH LCĐ",
-      "place": "Tầng 2",
-      "map": ["Trà sữa Cloudy", "https://maps.app.goo.gl/qQmms7jRmbzGnWQT6"],
-      "tag": "dut"
+  "2026-11-25": {
+    "19:00": {
+      "content": "Họp ban cán sự",
+      "tag": "meet"
     }
   },
   "2026-11-29": {
+    "14:00-16:30": {
+      "content": "Ngày Chủ nhật xanh",
+      "tag": "dut"
+    },
     "20:00": {
       "content": "Hướng dẫn sử dụng hệ thống XCHB",
       "tag": "meet"
@@ -25,6 +24,16 @@
   "2026-12-24": {
     "06:00": {
       "content": "Kỷ niệm tờ tiền đầu tiên từ lập trình 24/12/2022"
+    }
+  },
+  "2027-01-23": {
+    "06:00-23:00": {
+      "content": "Xuân Tình Nguyện"
+    }
+  },
+  "2027-01-24": {
+    "01:00-23:00": {
+      "content": "Xuân Tình Nguyện"
     }
   }
 }
