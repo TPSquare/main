@@ -1,16 +1,14 @@
 {
   "2026-11-29": {
-    "18:00": {
+    "12:00": {
       "content": "Hoàn thành tất cả các bài content sự kiện XTN",
       "tag": "deadline"
     },
     "20:00": {
       "content": "Hướng dẫn sử dụng hệ thống XCHB",
       "tag": "meet"
-    }
-  },
-  "2026-11-30": {
-    "08:00": { "content": "Đăng bài Form đăng ký cho CTV, ứng viên" }
+    },
+    "19:00": { "content": "Đăng bài Form đăng ký cho CTV, ứng viên" }
   },
   "2026-12-01": {
     "11:00-13:59": { "content": "Đăng ký học phần kỳ 2" }
@@ -40,9 +38,6 @@
   "2026-12-16": {
     "08:00-14:00": { "content": "Đăng ký học phần kỳ 2, không hủy" },
     "14:00-23:59": { "content": "Hủy đăng ký học phần kỳ 2, không đăng ký" }
-  },
-  "2026-12-23": {
-    "19:00": { "content": "Hướng dẫn nhận Giấy chứng nhận TNV Online" }
   },
   "2026-12-24": {
     "06:00": {
