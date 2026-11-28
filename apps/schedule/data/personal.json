@@ -12,6 +12,9 @@
   "2026-11-30": {
     "08:00": { "content": "Đăng bài Form đăng ký cho CTV, ứng viên" }
   },
+  "2026-12-01": {
+    "11:00-13:59": { "content": "Đăng ký học phần kỳ 2" }
+  },
   "2026-12-02": {
     "08:00": { "content": "Đăng bài Form đăng ký cho SV trong khoa" }
   },
@@ -19,7 +22,24 @@
     "06:00": {
       "content": "Xem phim \"Con Mắt Thứ Ba\"",
       "tag": "deadline"
-    }
+    },
+    "08:00-23:59": { "content": "Đăng ký học phần kỳ 2" }
+  },
+  "2026-12-09": {
+    "08:00-14:00": { "content": "Đăng ký học phần kỳ 2, không hủy" },
+    "15:00-23:59": { "content": "Hủy đăng ký học phần kỳ 2, không đăng ký" }
+  },
+  "2026-12-10": {
+    "08:00-14:00": { "content": "Đăng ký học phần kỳ 2, không hủy" },
+    "14:00-23:59": { "content": "Hủy đăng ký học phần kỳ 2, không đăng ký" }
+  },
+  "2026-12-15": {
+    "08:00-14:00": { "content": "Đăng ký học phần kỳ 2, không hủy" },
+    "15:00-23:59": { "content": "Hủy đăng ký học phần kỳ 2, không đăng ký" }
+  },
+  "2026-12-16": {
+    "08:00-14:00": { "content": "Đăng ký học phần kỳ 2, không hủy" },
+    "14:00-23:59": { "content": "Hủy đăng ký học phần kỳ 2, không đăng ký" }
   },
   "2026-12-23": {
     "19:00": { "content": "Hướng dẫn nhận Giấy chứng nhận TNV Online" }
@@ -34,6 +54,12 @@
   },
   "2027-01-08": {
     "19:00": { "content": "Giới thiệu & Countdown Đêm nhạc gây quỹ" }
+  },
+  "2027-01-16": {
+    "08:00": { "content": "Rút bớt học phần nếu có" }
+  },
+  "2027-01-17": {
+    "23:59": { "content": "Kết thúc đăng ký học phần học kỳ 2" }
   },
   "2027-01-13": {
     "19:00": { "content": "Bài đăng quyên góp áo quần, sách truyện, giấy vụn,..." }
